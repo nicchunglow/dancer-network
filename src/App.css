@@ -2,8 +2,15 @@
   text-align: center;
   font-family: lato;
   font-weight: lighter;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {
   background-color: rgb(240, 240, 240);
+}
+
+.header{
+  background-color: rgb(54, 192, 211);
+  padding: 30px 20px;
 }

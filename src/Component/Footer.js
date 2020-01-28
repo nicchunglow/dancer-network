@@ -1,9 +1,10 @@
-import React from "react"
-import "./Footer.css"
+import React from "react";
+import "./Footer.css";
 const Footer = () => {
-  return <div className='Footer'> 
+  return <div className='Footer'>
   Created by Nicholas Chung
-  </div>
-}
+  </div>;
+};
 
 export default Footer
+;

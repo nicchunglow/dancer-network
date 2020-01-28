@@ -2,24 +2,25 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-undef */
 import React from "react";
-import "./SingleEvent.css"
+import "./SingleEvent.css";
+import Button from "./Button";
 
-function SingleEvent({danceEvent}){
-  const {eventName, danceStyle, date, country, description} = danceEvent
+function SingleEvent ({ danceEvent }) {
+  const { eventName, danceStyle, date, country, description } = danceEvent;
   return (
     <div className="card">
-      <img alt="name" src={process.env.PUBLIC_URL + `/EventPicture.jpg`}/>
-      <div>{eventName}</div>
-      <div>{danceStyle}</div>
-      <div>{date}</div>
-      <div>{country}</div>
-      <div>{description}</div>
+      <img alt="name" src={process.env.PUBLIC_URL + "/EventPicture.jpg"}/>
+      <h2>{eventName}</h2>
+      <h3>Dance Style : {danceStyle}</h3>
+      <h3>Date : {date}</h3>
+      <h3>Country : {country}</h3>
+      <p className="description">Description : {description}</p>
+      <Button input="Join Event"/>
     </div>
   );
 }
 
 export default SingleEvent;
-
 
 // <h2>Event Title</h2>
 // <h3>Style : Street Dance</h3>
