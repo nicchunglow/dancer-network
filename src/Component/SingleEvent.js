@@ -6,7 +6,7 @@ import "./SingleEvent.css"
 const SingleEvent = () => {
   return (
     <div className="card">
-      <img alt="name" src={process.env.PUBLIC_URL + `/PictureResource/EventPicture.jpg`}/>
+      <img alt="name" src={process.env.PUBLIC_URL + `/EventPicture.jpg`}/>
       <h2>Event Title</h2>
       <h3>Style : Street Dance</h3>
       <h3>Date</h3>
