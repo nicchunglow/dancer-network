@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import SingleEvent from "./Component/SingleEvent";
 import Header from "./Component/Header"
 import Footer from "./Component/Footer"
+import EventGallery from "./Component/EventGallery";
 function App() {
   return (
     <div className="App">
       <Header/>
-      <SingleEvent/>
+      <EventGallery/>
       <Footer/>
     </div>
   );
