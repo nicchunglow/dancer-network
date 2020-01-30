@@ -14,12 +14,12 @@ class EventGallery extends React.Component {
   render() {
     return (
       <div className="eventgallery">
+        <MyMap/>
         <div>
           {DanceEventInfo.map(oneEvent => {
             return <SingleEvent key={oneEvent.id} danceEvent={oneEvent} />;
           })}
         </div>
-        <MyMap/>
       </div>
     );
   }

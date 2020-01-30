@@ -1,12 +1,9 @@
-
 .map {
-  width : 100px;
-  height : 100px;
-  padding: 0%;
-  margin : 25px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px rgba(116, 116, 116, 0.4);
 }
 
-.image{
-  width: 1%;
-  height: 1%;
+.marker {
+  transition: all ease-in 0.2s;
 }
