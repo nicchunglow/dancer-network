@@ -1,17 +1,19 @@
 import React from "react";
 import "./CreateEvent.css";
-
 class CreateEvent extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = [{
-      eventName: "",
-      description: "",
-      danceStyle: "",
-      country: "",
-      eventDate: "",
-    }];
+    this.state = {
+      allEvents: [
+        {
+          eventName: "",
+          description: "",
+          danceStyle: "",
+          country: "",
+          eventDate: "",
+        },
+      ],
+    };
   }
 
   handleChangeEventName = event => {
@@ -20,69 +22,71 @@ class CreateEvent extends React.Component {
     });
   };
 
-  handleChangeDescription = event => {
-    this.setState({
-      description: event.target.value,
+  addEvent = () => {
+    const name = this.state.allEvents;
+    const newEvent = {
+      eventName: name,
+    };
+
+    this.setState(state => {
+      return {
+        allEvents: [...state.allEvents, newEvent],
+      };
     });
   };
 
-  handleChangeDanceStyle = event => {
-    this.setState({
-      danceStyle: event.target.value,
-    });
-  };
+  // handleChangeDescription = event => {
+  //   this.setState({
+  //     description: event.target.value,
+  //   });
+  // };
 
-  handleChangeCountry = event => {
-    this.setState({
-      country: event.target.value,
-    });
-  };
+  // handleChangeDanceStyle = event => {
+  //   this.setState({
+  //     danceStyle: event.target.value,
+  //   });
+  // };
 
-  onSubmit = event => {
-    this.setState({
-
-    });
-  }
+  // handleChangeCountry = event => {
+  //   this.setState({
+  //     country: event.target.value,
+  //   });
+  // };
 
   render() {
     return (
       <div className="CreateEvent">
-        <div>
-        Event Name : <input
-            type="text"
-            value={this.state.eventName}
-            onChange={this.handleChangeEventName}
-          />
-          <select
-            value={this.state.danceStyle}
-            onChange={this.handleChangeDanceStyle}
-          >
-            <option>Locking</option>
-            <option>Popping</option>
-            <option>Hip Hop</option>
-          </select>
-          <select
-            value={this.state.country}
-            onChange={this.handleChangeCountry}
-          >
-            <option>Singapore</option>
-            <option>Malaysia</option>
-            <option>Japan</option>
-          </select>
-          <div>
+        Event Name :{" "}
+        <input
+          type="text"
+          value={this.state.eventName}
+          onChange={this.handleChangeEventName}
+        />
+        {/* <select
+          value={this.state.danceStyle}
+          onChange={this.handleChangeDanceStyle}
+        >
+          <option>Locking</option>
+          <option>Popping</option>
+          <option>Hip Hop</option>
+        </select>
+        <select
+          value={this.state.country}
+          onChange={this.handleChangeCountry}
+        >
+          <option>Singapore</option>
+          <option>Malaysia</option>
+          <option>Japan</option>
+        </select>
           Event description : <input
-              type="text"
-              value={this.state.description}
-              onChange={this.handleChangeDescription}
-            />
-            <div>
-            </div>
-            <button>Submit</button>
-          </div>
-        </div>
+          type="text"
+          value={this.state.description}
+          onChange={this.handleChangeDescription}
+        /> */}
+        <button onClick={this.handleChangeEventName}>Add Event!</button>
+        {console.log(this.state.eventName)}
       </div>
     );
   }
 }
-
 export default CreateEvent;

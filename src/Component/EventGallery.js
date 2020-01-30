@@ -2,6 +2,7 @@
 import React from "react";
 import DanceEventInfo from "../Resource/DanceEventInfo";
 import SingleEvent from "./SingleEvent";
+import MyMap from "./MyMap";
 class EventGallery extends React.Component {
   constructor(props) {
     super(props);
@@ -10,20 +11,18 @@ class EventGallery extends React.Component {
     };
   }
 
-  // eslint-disable-next-line react/require-render-return
   render() {
     return (
-      <div>
-        {DanceEventInfo.map(oneEvent => {
-          return <SingleEvent
-            className="eventgallery"
-            key={oneEvent.id} danceEvent = {oneEvent}/>;
-        },
-        )}
+      <div className="eventgallery">
+        <div>
+          {DanceEventInfo.map(oneEvent => {
+            return <SingleEvent key={oneEvent.id} danceEvent={oneEvent} />;
+          })}
+        </div>
+        <MyMap/>
       </div>
     );
   }
 }
 
-export default EventGallery
-;
+export default EventGallery;

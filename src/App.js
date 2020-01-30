@@ -1,25 +1,22 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import EventGallery from "./Component/EventGallery";
-import { BrowserRouter, Link, Route } from "react-router-dom";
 import CreateEvent from "./Component/CreateEvent";
 import Home from "./Component/Home";
+import "./App.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <header className="header">
-        <Link to="/">Home</Link>
-        <Link to="/CreateEvent">Create Event</Link>
-        <Link to="/EventGallery">All Events</Link>
-      </header>
+      <Header/>
       <div className="App">
         <Route exact path="/" component={Home} />
-        <Route exact path="/CreateEvent" component={CreateEvent} />
         <Route exact path="/EventGallery" component={EventGallery}/>
-        <Footer/>
+        <Route exact path="/CreateEvent" component={CreateEvent} />
       </div>
+      <Footer/>
     </BrowserRouter>
   );
 }
