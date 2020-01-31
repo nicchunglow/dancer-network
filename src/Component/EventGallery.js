@@ -43,7 +43,7 @@ class EventGallery extends React.Component {
            <div className="search-box-container">
              <h2>Find your events here!</h2>
              <input placeholder="Search by Name" className="searchbox" type="text" value={this.state.nameValue} onChange={this.handleChange} />
-             <input placeholder="Search by Date" className="searchbox" type="text" value={this.state.dateValue} onChange={this.dateChange} />
+             <input placeholder="Search by Date (e.g. DDMMYYYY)" className="searchbox" type="text" value={this.state.dateValue} onChange={this.dateChange} />
              <h3>Currently {DanceEventInfo.length} events around the world!</h3>
            </div>
            <div className='eventgallery'>

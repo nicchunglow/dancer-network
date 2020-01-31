@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: row-reverse;
 }
-.galleryandbox{
+.galleryandbox {
   width: 55%;
   height: 100vh;
   overflow: hidden;
@@ -33,7 +33,7 @@
   padding: 1em;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.856);
-  border: 0.5px solid rgb(160, 160, 160);
+  box-shadow: 5px 5px 5px grey;
 }
 
 .searchbox {
@@ -42,6 +42,9 @@
   height: 30px;
   margin: 10px auto;
   font-size: 15px;
+  border-radius: 15px;
+  border: 0px white;
+  box-shadow: 6git px 5px grey;
 }
 
 h3:hover {
