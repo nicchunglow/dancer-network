@@ -3,7 +3,6 @@ import { BrowserRouter, Route } from "react-router-dom";
 import Header from "./Component/Header";
 import Footer from "./Component/Footer";
 import EventGallery from "./Component/EventGallery";
-import CreateEvent from "./Component/CreateEvent";
 import Home from "./Component/Home";
 import "./App.css";
 
@@ -14,7 +13,6 @@ function App() {
       <div className="App">
         <Route exact path="/" component={Home} />
         <Route exact path="/EventGallery" component={EventGallery}/>
-        <Route exact path="/CreateEvent" component={CreateEvent} />
       </div>
       <Footer/>
     </BrowserRouter>

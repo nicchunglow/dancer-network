@@ -1,9 +1,16 @@
 .map {
-  width: auto;
+  margin-left: auto;
+  width: 45%;
+  height: 100vh;
   border-radius: 10px;
   box-shadow: 5px 5px 0px rgba(116, 116, 116, 0.4);
 }
 
 .marker {
   transition: all ease-in 0.2s;
+}
+
+h4 {
+  display: inline-block;
+  width: 60%;
 }

@@ -10,12 +10,14 @@ function SingleEvent ({ danceEvent }) {
   return (
     <div className="card">
       <img alt="name" src={process.env.PUBLIC_URL + "/EventPicture.jpg"}/>
-      <h2>{eventName}</h2>
-      <h3>Dance Style : {danceStyle}</h3>
-      <h3>Date : {date}</h3>
-      <h3>Country : {country}</h3>
-      <p className="description">Description : {description}</p>
-      <Button input="Join Event"/>
+      <div className="text-container">
+        <h2>{eventName}</h2>
+        <h3>Dance Style : {danceStyle}</h3>
+        <h3>Date : {date}</h3>
+        <h3>Country : {country}</h3>
+        <p className="description">Description : {description}</p>
+        <Button input="Join Event"/>
+      </div>
     </div>
   );
 }

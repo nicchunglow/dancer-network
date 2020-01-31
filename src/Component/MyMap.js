@@ -1,6 +1,7 @@
+/* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import "./MyMap.css";
-
+import DanceEventInfo from "../Resource/DanceEventInfo";
 import {
   GoogleMap,
   Marker,
@@ -8,28 +9,56 @@ import {
   withGoogleMap,
   withScriptjs
 } from "react-google-maps";
-// AIzaSyAWGAzVQOv6pPTV6tfIu5JTOudnwDidvHc  lat={1.28} lng={103.85}
-// const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
-class MyMap extends Component {
+class NewMarker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isInfoBoxOpen: false
+      isInfoBoxOpen: false,
+      myEvent: props.boo,
     };
   }
 
   render() {
+    const event = this.state.myEvent;
     return (
-      // Important! Always set the container height explicitly
-      <div
-      >
-        <GoogleMap defaultZoom={15} defaultCenter={{ lat: 1.28, lng: 103.85 }} >
-          <Marker defaultAnimation="Bounce" className="marker" position={{ lat: 1.28, lng: 103.85 }} onClick={() => this.setState({ isInfoBoxOpen: !this.state.isInfoBoxOpen })}>
-            { this.state.isInfoBoxOpen && <InfoWindow onCloseClick={() => this.setState({ isInfoBoxOpen: false })}>
-              <div>info window</div>
-            </InfoWindow>}
-          </Marker>
+      <Marker
+        className="marker"
+        position={{ lat: event.Latitude, lng: event.Longitude }}
+        onClick={() => this.setState({ isInfoBoxOpen: true })}>
+
+        { this.state.isInfoBoxOpen &&
+              <InfoWindow onCloseClick={() => this.setState({ isInfoBoxOpen: false })}>
+                <h4>Event name : {event.eventName}
+                Dance Style : {event.danceStyle}
+                Date : {event.date}
+                Country : {event.country}
+                </h4>
+              </InfoWindow>}
+      </Marker>
+
+    );
+  }
+}
+class MyMap extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+
+      <div>
+        <GoogleMap
+          defaultZoom={3}
+          defaultCenter={{ lat: 1.28, lng: 103.85 }} >
+          {DanceEventInfo.map((event) =>
+            <NewMarker
+              key={event.id}
+              boo={event}>
+
+            </NewMarker>
+          )}
         </GoogleMap>
       </div>
     );
@@ -41,9 +70,9 @@ const MapWithScript = withScriptjs(
 );
 
 const InitiasedMap = () => (
-  <MapWithScript googleMapURL="https://maps.googleapis.com/maps/api/js?key=RANDOMKEY&v=3.exp"
+  <MapWithScript googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_SECRET}`}
     loadingElement={<div style={{ height: "100%" }} />}
-    containerElement={<div className="map" style={{ height: "400px", width: "100%" }} />}
+    containerElement={<div className="map"/>}
     mapElement={<div style={{ height: "100%" }} />} />
 );
 

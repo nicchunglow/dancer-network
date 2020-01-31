@@ -3,10 +3,10 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  return <header className="header">
+  return <header className="Header">
     <img alt="name" src={process.env.PUBLIC_URL + "/dancer-network.png"}/>
     <Link to="/">Home</Link>
-    <Link to="/CreateEvent">Create Event</Link>
+    {/* <Link to="/CreateEvent">Create Event</Link> */}
     <Link to="/EventGallery">All Events</Link>
   </header>;
 };
