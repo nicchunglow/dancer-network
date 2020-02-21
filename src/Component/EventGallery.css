@@ -17,7 +17,7 @@
 }
 
 .eventgallery::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 
 .event-gallery-align {
@@ -32,7 +32,7 @@
   font-size: 12px;
   padding: 1em;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.856);
+  background-color: #f7f7f7;
   box-shadow: 5px 5px 5px grey;
 }
 
@@ -43,8 +43,8 @@
   margin: 10px auto;
   font-size: 15px;
   border-radius: 15px;
-  border: 0px white;
-  box-shadow: 6git px 5px grey;
+  border: 0px #ff0000;
+  box-shadow: 2px 5px grey;
 }
 
 h3:hover {

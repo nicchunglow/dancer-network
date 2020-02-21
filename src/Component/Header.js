@@ -5,9 +5,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return <header className="Header">
     <img alt="name" src={process.env.PUBLIC_URL + "/dancer-network.png"}/>
-    <Link to="/">Home</Link>
-    {/* <Link to="/CreateEvent">Create Event</Link> */}
-    <Link to="/EventGallery">All Events</Link>
+    <ul><img alt="name" src={`${process.env.PUBLIC_URL}/meat.png`}/>
+      <li><Link to="/">Home</Link>
+        <ul><Link to="/CreateEvent">Create Event</Link></ul>
+        <ul><Link to="/EventGallery">All Events</Link></ul>
+      </li>
+
+    </ul>
   </header>;
 };
 

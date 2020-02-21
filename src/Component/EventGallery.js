@@ -1,9 +1,9 @@
 import React from "react";
+import axios from "axios";
 import DanceEventInfo from "../Resource/DanceEventInfo";
 import SingleEvent from "./SingleEvent";
 import MyMap from "./MyMap";
 import "./EventGallery.css";
-
 class EventGallery extends React.Component {
   constructor(props) {
     super(props);
@@ -13,6 +13,14 @@ class EventGallery extends React.Component {
       allDanceEvents: DanceEventInfo,
       showAllEvents: true
     };
+  }
+
+  componentDidMount() {
+    axios.get("https://dancer-network.herokuapp.com/events").then(res => {
+      this.setState({
+        allDanceEvents: res.body
+      });
+    });
   }
 
    handleChange =(event) => {
@@ -44,7 +52,7 @@ class EventGallery extends React.Component {
              <h2>Find your events here!</h2>
              <input placeholder="Search by Name" className="searchbox" type="text" value={this.state.nameValue} onChange={this.handleChange} />
              <input placeholder="Search by Date (e.g. DDMMYYYY)" className="searchbox" type="text" value={this.state.dateValue} onChange={this.dateChange} />
-             <h3>Currently {DanceEventInfo.length} events around the world!</h3>
+             <h3>Currently {this.state.allDanceEvents.length} events around the world!</h3>
            </div>
            <div className='eventgallery'>
              {this.state.dateValue !== "" &&
@@ -58,7 +66,6 @@ class EventGallery extends React.Component {
              }
            </div>
          </div>
-         <iframe src="https://giphy.com/embed/wn8rVP7qC8TNC" width="50" height="50" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/stickers/dance-carlton-wn8rVP7qC8TNC"></a></p>
        </div>
      );
    }
