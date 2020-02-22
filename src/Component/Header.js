@@ -7,8 +7,8 @@ const Header = () => {
     <img alt="name" src={process.env.PUBLIC_URL + "/dancer-network.png"}/>
     <ul><img alt="name" src={`${process.env.PUBLIC_URL}/meat.png`}/>
       <li><Link to="/">Home</Link>
-        <ul><Link to="/CreateEvent">Create Event</Link></ul>
-        <ul><Link to="/EventGallery">All Events</Link></ul>
+        <ul><Link to="/events/create">Create Event</Link></ul>
+        <ul><Link to="/events">All Events</Link></ul>
       </li>
 
     </ul>

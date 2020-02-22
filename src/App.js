@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Route exact path="/" component={Home} />
         <Route exact path="/events" component={EventGallery}/>
-        <Route path={"/events/:eventId"} component={EventDetailsPage}/>
+        <Route path="/events/:id" component={EventDetailsPage}/>
         {/* <Redirect to="/events"/> */}
       </div>
       <Footer/>

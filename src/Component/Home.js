@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => (
   <div>
-    Hello World
+    Hello World12312
   </div>
 );
 

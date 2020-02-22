@@ -63,7 +63,7 @@ class EventGallery extends React.Component {
 
           <div className="eventgallery">
             {this.state.allDanceEvents.map(event => {
-              return <SingleEvent key={event.id} danceEvent={event} />;
+              return <SingleEvent key={event.id} perEvent={event} />;
             })}
           </div>
         </div>

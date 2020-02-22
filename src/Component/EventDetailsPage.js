@@ -2,7 +2,6 @@ import React from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
 import SingleEvent from "./SingleEvent";
-
 class EventDetailsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +13,7 @@ class EventDetailsPage extends React.Component {
 
   componentDidMount() {
     axios("https://dancer-network.herokuapp.com/events/:id")
-      .then(res => {
+      .then((res) => {
         this.setState({
           fullEventData: res.data,
           isloading: false
@@ -22,7 +21,7 @@ class EventDetailsPage extends React.Component {
       })
       .catch(() =>
         this.setState({
-          errorMessage: "No event has been found",
+          errorMessage: "GG liao",
           isloading: false
         })
       );
@@ -32,10 +31,9 @@ class EventDetailsPage extends React.Component {
     return (
       <div>
         {!!this.state.isloading && <ReactLoading />}
-        <SingleEvent key={this.state.fullEventData.id} danceEvent={this.state.fullEventData} />
+        <SingleEvent key={this.state.fullEventData.id} perEvent={this.state.fullEventData} />
       </div>
     );
   }
 }
-
 export default EventDetailsPage;
