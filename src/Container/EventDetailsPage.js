@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
-import SingleEvent from "./SingleEvent";
+import SingleEvent from "../Component/SingleEvent";
 class EventDetailsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -12,12 +12,13 @@ class EventDetailsPage extends React.Component {
   }
 
   componentDidMount() {
-    axios("https://dancer-network.herokuapp.com/events/:id")
+    axios.get("https://dancer-network.herokuapp.com/events/5612e7ff-d42d-4a8d-b873-cb8119b47473")
       .then((res) => {
         this.setState({
           fullEventData: res.data,
-          isloading: false
+          isloading: false,
         });
+        console.log(res.data);
       })
       .catch(() =>
         this.setState({
@@ -28,10 +29,14 @@ class EventDetailsPage extends React.Component {
   }
 
   render() {
+    // const eventId = props.match.params.id;
+    // allEvents = this.state.fullEventData
+    // const currentEventData =
     return (
       <div>
         {!!this.state.isloading && <ReactLoading />}
-        <SingleEvent key={this.state.fullEventData.id} perEvent={this.state.fullEventData} />
+
+        <SingleEvent key={this.state.fullEventData.id} perEvent={this.state.fullEventData} />;
       </div>
     );
   }

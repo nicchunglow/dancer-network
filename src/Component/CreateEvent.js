@@ -62,7 +62,7 @@ class CreateEvent extends React.Component {
           value={this.state.eventName}
           onChange={this.handleChangeEventName}
         />
-        {/* <select
+        <select
           value={this.state.danceStyle}
           onChange={this.handleChangeDanceStyle}
         >
@@ -82,7 +82,7 @@ class CreateEvent extends React.Component {
           type="text"
           value={this.state.description}
           onChange={this.handleChangeDescription}
-        /> */}
+        />
         <button onClick={this.handleChangeEventName}>Add Event!</button>
         {console.log(this.state.eventName)}
       </div>

@@ -16,9 +16,6 @@
   overflow-y: scroll;
 }
 
-.eventgallery::-webkit-scrollbar {
-  /* display: none; */
-}
 
 .event-gallery-align {
   font-size: 15px;
