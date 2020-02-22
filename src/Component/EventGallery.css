@@ -6,7 +6,7 @@
 .galleryandbox {
   width: 55%;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
 }
 .eventgallery {
   display: flex;

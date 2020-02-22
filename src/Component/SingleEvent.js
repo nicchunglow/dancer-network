@@ -4,24 +4,30 @@
 import React from "react";
 import "./SingleEvent.css";
 import Button from "./Button";
+import { link } from "react-router-dom";
 
-function SingleEvent ({ danceEvent }) {
-  const { eventName, danceStyle, date, country, description } = danceEvent;
+function SingleEvent({ danceEvent }) {
+  const {
+    eventName,
+    eventStartDate,
+    eventEndDate,
+    location,
+    eventSummary
+  } = danceEvent;
   return (
     <div className="card">
-      <img alt="name" src={process.env.PUBLIC_URL + "/EventPicture.jpg"}/>
+      <img alt="eventName" src={process.env.PUBLIC_URL + "/EventPicture.jpg"} />
       <div className="text-container">
         <h2>{eventName}</h2>
-        <h3>Dance Style : {danceStyle}</h3>
-        <h3>Date : {date}</h3>
-        <h3>Country : {country}</h3>
-        <p className="description">Description : {description}</p>
-        <Button input="Join Event"/>
+        <h3>Location :{location}</h3>
+        <h3>Start Date: {eventStartDate}</h3>
+        <h3>End Date: {eventEndDate}</h3>
+        <p>{eventSummary}</p>
+        <Button input="Join Event" />
       </div>
     </div>
   );
 }
-
 export default SingleEvent;
 
 // <h2>Event Title</h2>
