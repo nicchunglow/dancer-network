@@ -1,10 +1,10 @@
 import React from "react";
 
 const Home = () => (
-  <div>
-    Hello World12312
-  </div>
+  <p className="home-box">
+      Hello World12312
+  </p>
+
 );
 
-export default Home
-;
+export default Home;

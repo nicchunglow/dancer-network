@@ -2,8 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-undef */
 import React from "react";
-import "./SingleEvent.css";
-import Button from "./Button";
+import "./FullEventDisplay.css";
 import { NavLink } from "react-router-dom";
 
 function SingleEvent({ perEvent }) {
@@ -20,10 +19,6 @@ function SingleEvent({ perEvent }) {
   } = perEvent;
   return (
     <div className="card">
-      <img
-        alt="eventName"
-        src={process.env.PUBLIC_URL + "/EventPicture.jpg"}
-      />
       <div className="text-container">
         <h2>{eventName}</h2>
         <h3>Location :{location}</h3>
@@ -33,7 +28,7 @@ function SingleEvent({ perEvent }) {
         <h4>By: {eventOwner}</h4>
         <p>{eventSummary}</p>
         <NavLink to={"/events/:id"}>
-          <Button input="join now!" />
+          <button className="button">Join now! </button>
         </NavLink>
       </div>
     </div>

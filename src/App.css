@@ -5,10 +5,9 @@
 }
 
 :root {
-  background-color: #ffffff;
+  background-image: linear-gradient(to top right,#ff9966  ,#ff5e62);
   background-position-x: 0px;
   background-position-y: 0px;
-  background-size: 80%;
   /* animation: backgroundMove 100%, ease-in-out infinite; */
 }
 

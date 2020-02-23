@@ -3,7 +3,6 @@
 /* eslint-disable no-undef */
 import React from "react";
 import "./SingleEvent.css";
-import Button from "./Button";
 import { NavLink } from "react-router-dom";
 
 function SingleEvent({ perEvent }) {
@@ -28,8 +27,8 @@ function SingleEvent({ perEvent }) {
         <h3>Start Date: {eventStartDate}</h3>
         <h3>End Date: {eventEndDate}</h3>
         <p>{eventSummary}</p>
-        <NavLink to={"/events/:id"}>
-          <Button input="Find out more" />
+        <NavLink to={"/events/"}>
+          <button className="button">Find out more</button>
         </NavLink>
       </div>
     </div>

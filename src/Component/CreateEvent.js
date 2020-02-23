@@ -7,7 +7,7 @@ class CreateEvent extends React.Component {
       allEvents: [
         {
           eventName: "",
-          description: "",
+          eventSummary: "",
           danceStyle: "",
           country: "",
           eventDate: "",
@@ -86,7 +86,7 @@ class CreateEvent extends React.Component {
             value={this.state.description}
             onChange={this.handleChangeDescription}
           />
-          <button onClick={this.handleChangeEventName}>Add Event!</button>
+          <button className="add-event" onClick={this.handleChangeEventName}>Add Event!</button>
         </div>
       </div>
     );
