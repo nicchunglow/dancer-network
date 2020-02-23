@@ -3,13 +3,12 @@
   padding: 20px 15px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  box-shadow: 0px 10px 0px 0px rgba(116, 116, 116, 0.4);
+  justify-content: space-around ;
+  box-shadow: 0px 3px 0px 0px rgba(116, 116, 116, 0.4);
   position: static;
-  margin: 30px;
-  border-radius: 20px;
+  background-color: #fbfbfb;
+  margin-bottom: 20px;
 }
-
 .Header a {
   color: #f7f7f7;
   text-decoration: none;
@@ -46,9 +45,6 @@
 .Header ul li a {
   color: black;
   text-decoration: none;
-}
-.Header ul li a:hover {
-  color: #ff3b00;
 }
 
 .Header ul:hover li {

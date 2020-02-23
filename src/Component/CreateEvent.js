@@ -55,36 +55,39 @@ class CreateEvent extends React.Component {
 
   render() {
     return (
-      <div className="CreateEvent">
-        Event Name :{" "}
-        <input
-          type="text"
-          value={this.state.eventName}
-          onChange={this.handleChangeEventName}
-        />
-        <select
-          value={this.state.danceStyle}
-          onChange={this.handleChangeDanceStyle}
-        >
-          <option>Locking</option>
-          <option>Popping</option>
-          <option>Hip Hop</option>
-        </select>
-        <select
-          value={this.state.country}
-          onChange={this.handleChangeCountry}
-        >
-          <option>Singapore</option>
-          <option>Malaysia</option>
-          <option>Japan</option>
-        </select>
-          Event description : <input
-          type="text"
-          value={this.state.description}
-          onChange={this.handleChangeDescription}
-        />
-        <button onClick={this.handleChangeEventName}>Add Event!</button>
-        {console.log(this.state.eventName)}
+      <div className="create-event-card">
+        <div className="create-event">
+        Event Name :
+          <input
+            type="text"
+            value={this.state.eventName}
+            onChange={this.handleChangeEventName}
+          />
+          Dance Style:
+          <select
+            value={this.state.danceStyle}
+            onChange={this.handleChangeDanceStyle}
+          >
+            <option>Locking</option>
+            <option>Popping</option>
+            <option>Hip Hop</option>
+          </select>
+          Event at which country:
+          <select
+            value={this.state.country}
+            onChange={this.handleChangeCountry}
+          >
+            <option>Singapore</option>
+            <option>Malaysia</option>
+            <option>Japan</option>
+          </select>
+          Event Summary : <input
+            type="text"
+            value={this.state.description}
+            onChange={this.handleChangeDescription}
+          />
+          <button onClick={this.handleChangeEventName}>Add Event!</button>
+        </div>
       </div>
     );
   }

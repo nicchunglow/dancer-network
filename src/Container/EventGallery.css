@@ -1,8 +1,9 @@
 .whole-gallery {
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
+
 .galleryandbox {
   width: 55%;
   height: 100vh;
@@ -13,7 +14,7 @@
   width: 100%;
   flex-direction: column;
   height: 1200px;
-  overflow-y: scroll;
+  overflow: visible;
 }
 
 
@@ -24,26 +25,34 @@
 }
 
 .search-box-container {
-  width: 70%;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 1000px;
   margin: 20px auto;
   font-size: 12px;
   padding: 1em;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #f7f7f7;
-  box-shadow: 5px 5px 5px grey;
+  box-shadow: 2px 5px 10px #e0e0e0;
+}
+
+.search-box-container:hover{
+  box-shadow: 2px 5px 10px rgb(104, 104, 104);
+  transition: all 0.5s ease-in-out;
 }
 
 .searchbox {
-  width: 80%;
+  width: 50%;
   max-width: 600px;
   height: 30px;
   margin: 10px auto;
   font-size: 15px;
+  text-align: center;
   border-radius: 15px;
   border: 0px #ff0000;
-  box-shadow: 2px 5px grey;
+  box-shadow: 2px 5px 10px #e0e0e0;
 }
 
-h3:hover {
-  color: orange;
-}
+
+

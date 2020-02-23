@@ -1,10 +1,14 @@
 .map {
-  margin-left: auto;
-  width: 45%;
-  height: 100vh;
-  border-radius: 10px;
+  margin-left: 500px;
+  width: 50%;
+  height: 60vh;
+  box-shadow: 2px 5px 10px #e0e0e0;
 }
 
+.map:hover{
+  box-shadow: 2px 5px 10px rgb(104, 104, 104);
+  transition: all 0.5s ease-in-out;
+}
 .marker {
   transition: all ease-in 0.2s;
 }
