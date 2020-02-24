@@ -8,19 +8,22 @@ import "./App.css";
 import EventDetailsPage from "./Container/EventDetailsPage";
 import CreateEvent from "../src/Component/CreateEvent";
 import RegisterFunction from "./Component/RegisterFunction";
+import Login from "./Component/Login";
+
 function App() {
   return (
     <BrowserRouter>
-      <Header/>
+      <Header />
       <div className="App">
         <Route exact path="/" component={Home} />
         <Route exact path="/users/register" component={RegisterFunction} />
-        <Route exact path="/events/create" component={CreateEvent}/>
-        <Route exact path="/events" component={EventGallery}/>
-        <Route exact path="/events/id" component={EventDetailsPage}/>
-        <Redirect to="/events/"/>
+        <Route exact path="/events/create" component={CreateEvent} />
+        <Route exact path="/events" component={EventGallery} />
+        <Route exact path="/events/id" component={EventDetailsPage} />
+        <Route exact path="/users/login" component={Login} />
+        <Redirect to="/events" />
       </div>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   );
 }

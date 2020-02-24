@@ -1,6 +1,6 @@
 import React from "react";
 import "./CreateEvent.css";
-import Axios from "axios";
+import axios from "axios";
 class RegisterFunction extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +48,7 @@ class RegisterFunction extends React.Component {
   };
 
   RegisterUser = async event => {
-    const payload = {
+    const details = {
       username: this.state.username,
       password: this.state.password,
       firstName: this.state.firstName,
@@ -56,63 +56,51 @@ class RegisterFunction extends React.Component {
       stageName: this.state.stageName
     };
 
-    const res = await Axios.post("https://dancer-network.herokuapp.com/users/register", payload);
-    console.log(res);
+    const res = await axios.post("https://dancer-network.herokuapp.com/users/register", details);
+    if (res.status === 200) {
+      console.log(res);
+    }
   }
 
   render() {
     return (
-      <div>
-        <h2>New User Registration</h2>
-        <div>
-          <span>
-            username:{" "}
-            <input
-              type="text"
-              placeholder="username"
-              onChange={this.onChangeUsername}
-            />
-          </span>
-          <br />
-          <span>
-            password:{" "}
-            <input
-              type="text"
-              placeholder="password"
-              onChange={this.onChangePassword}
-            />
-          </span>
-          <br />
-          <span>
-            first name:{" "}
-            <input
-              type="text"
-              placeholder="first name"
-              onChange={this.onChangeFirstName}
-            />
-          </span>
-          <br />
-          <span>
-            last name:{" "}
-            <input
-              type="text"
-              placeholder="last name"
-              onChange={this.onChangeLastName}
-            />
-          </span>
-          <br />
-          <span>
-            Stage Name:{" "}
-            <input
-              type="text"
-              placeholder="Stage Name"
-              onChange={this.onChangeStageName}
-            />
-          </span>
-          <br />
-          <button onClick={event => this.RegisterUser(event)}>Register</button>
+      <div className="create-event-card">
+        <div className="create-event">
+          <h2>User Registration</h2>
+            Username:
+          <input
+            type="text"
+            placeholder="username"
+            onChange={this.onChangeUsername}
+          />
+            Password:
+          <input
+            type="text"
+            placeholder="password"
+            onChange={this.onChangePassword}
+          />
+            First name:
+          <input
+            type="text"
+            placeholder="first name"
+            onChange={this.onChangeFirstName}
+          />
+            Last name:
+          <input
+            type="text"
+            placeholder="last name"
+            onChange={this.onChangeLastName}
+          />
+            Stage Name:
+          <input
+            type="text"
+            placeholder="Stage Name"
+            onChange={this.onChangeStageName}
+          />
+          <button className="add-event" onClick={event => this.RegisterUser(event)}>Register</button>
         </div>
       </div>
+
     );
   }
 }

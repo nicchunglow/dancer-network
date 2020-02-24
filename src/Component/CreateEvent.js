@@ -1,5 +1,7 @@
 import React from "react";
 import "./CreateEvent.css";
+import axios from "axios";
+
 class CreateEvent extends React.Component {
   constructor(props) {
     super(props);
@@ -9,64 +11,79 @@ class CreateEvent extends React.Component {
           eventName: "",
           eventSummary: "",
           danceStyle: "",
-          country: "",
-          eventDate: "",
+          location: "",
+          eventStartDate: "",
+          eventEndDate: "",
         },
       ],
     };
   }
 
-  handleChangeEventName = event => {
+  onChangeEventName = event => {
     this.setState({
-      eventName: event.target.value,
+      eventName: event.target.value
     });
   };
 
-  addEvent = () => {
-    const name = this.state.allEvents;
-    const newEvent = {
-      eventName: name,
+  onChangeEventSummary = event => {
+    this.setState({
+      eventSummary: event.target.value
+    });
+  };
+
+  onChangeFirstName = event => {
+    this.setState({
+      danceStyle: event.target.value
+    });
+  };
+
+  onChangeLocation = event => {
+    this.setState({
+      location: event.target.value
+    });
+  };
+
+  onChangeEventStartDate = event => {
+    this.setState({
+      eventStartDate: event.target.value
+    });
+  };
+
+  onChangeEventEndDate = event => {
+    this.setState({
+      eventEndDate: event.target.value
+    });
+  };
+
+  eventDetails = async event => {
+    const details = {
+      eventName: this.state.eventName,
+      danceStyle: this.state.danceStyle,
+      location: this.state.location,
+      eventSummary: this.state.eventSummary,
+      eventStartDate: this.state.eventStartDate,
+      eventEndDate: this.state.eventEndDate,
     };
-
-    this.setState(state => {
-      return {
-        allEvents: [...state.allEvents, newEvent],
-      };
-    });
-  };
-
-  // handleChangeDescription = event => {
-  //   this.setState({
-  //     description: event.target.value,
-  //   });
-  // };
-
-  // handleChangeDanceStyle = event => {
-  //   this.setState({
-  //     danceStyle: event.target.value,
-  //   });
-  // };
-
-  // handleChangeCountry = event => {
-  //   this.setState({
-  //     country: event.target.value,
-  //   });
-  // };
+    const res = await axios.post("https://dancer-network.herokuapp.com/events/create", details);
+    if (res.status === 200) {
+      console.log(res);
+    }
+  }
 
   render() {
     return (
       <div className="create-event-card">
         <div className="create-event">
+          <h2>Create Event</h2>
         Event Name :
           <input
             type="text"
-            value={this.state.eventName}
-            onChange={this.handleChangeEventName}
+            placeholder="Event Name"
+            onChange={this.onChangeEventName}
           />
           Dance Style:
           <select
-            value={this.state.danceStyle}
-            onChange={this.handleChangeDanceStyle}
+            onChange={this.onChangeDanceStyle}
           >
             <option>Locking</option>
             <option>Popping</option>
@@ -74,8 +91,7 @@ class CreateEvent extends React.Component {
           </select>
           Event at which country:
           <select
-            value={this.state.country}
-            onChange={this.handleChangeCountry}
+            onChange={this.onChangeLocation}
           >
             <option>Singapore</option>
             <option>Malaysia</option>
@@ -83,10 +99,20 @@ class CreateEvent extends React.Component {
           </select>
           Event Summary : <input
             type="text"
-            value={this.state.description}
-            onChange={this.handleChangeDescription}
+            placeholder="Share your Event Details"
+            onChange={this.onChangeEventSummary}
           />
-          <button className="add-event" onClick={this.handleChangeEventName}>Add Event!</button>
+          Event Start Date : <input
+            type="text"
+            placeholder="YYYY-MM-DD"
+            onChange={this.onChangeEventStartDate}
+          />
+          Event Start Date : <input
+            type="text"
+            placeholder="YYYY-MM-DD"
+            onChange={this.onChangeEventEndDate}
+          />
+          <button className="add-event" onClick={event => this.eventDetails(event)}>Create your event!</button>
         </div>
       </div>
     );
