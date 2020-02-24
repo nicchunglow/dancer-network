@@ -65,9 +65,7 @@ class CreateEvent extends React.Component {
       eventEndDate: this.state.eventEndDate,
     };
     const res = await axios.post("https://dancer-network.herokuapp.com/events/create", details);
-    if (res.status === 200) {
-      console.log(res);
-    }
+    console.log(res);
   }
 
   render() {

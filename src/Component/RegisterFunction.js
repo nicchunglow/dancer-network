@@ -57,9 +57,7 @@ class RegisterFunction extends React.Component {
     };
 
     const res = await axios.post("https://dancer-network.herokuapp.com/users/register", details);
-    if (res.status === 200) {
-      console.log(res);
-    }
+    console.log(res);
   }
 
   render() {

@@ -27,9 +27,7 @@ class Login extends React.Component {
       password: this.state.password
     };
     const res = await axios.post("https://dancer-network.herokuapp.com/users/login", details);
-    if (res.status === 200) {
-      console.log(res.data);
-    }
+    console.log(res.data);
   };
 
   render() {
