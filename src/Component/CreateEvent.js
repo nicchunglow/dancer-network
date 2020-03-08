@@ -83,9 +83,13 @@ class CreateEvent extends React.Component {
           <select
             onChange={this.onChangeDanceStyle}
           >
-            <option>Locking</option>
-            <option>Popping</option>
             <option>Hip Hop</option>
+            <option>Popping</option>
+            <option>Locking</option>
+            <option>Waacking</option>
+            <option>Krump</option>
+            <option>Breaking</option>
+            <option>All-styles</option>
           </select>
           Event at which country:
           <select
@@ -95,7 +99,8 @@ class CreateEvent extends React.Component {
             <option>Malaysia</option>
             <option>Japan</option>
           </select>
-          Event Summary : <input
+          Event Summary : <textarea
+            className="textSpace"
             type="text"
             placeholder="Share your Event Details"
             onChange={this.onChangeEventSummary}

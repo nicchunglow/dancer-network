@@ -1,11 +1,12 @@
 .App {
-  text-align: center;
-  font-family: lato;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica;
   font-weight: lighter;
 }
 
 :root {
-  background-image: linear-gradient(to top right,#ff9966  ,#ff5e62);
+  background-image: linear-gradient(to top right, #2b2b2a, #ff5e5e);
   background-position-x: 0px;
   background-position-y: 0px;
   /* animation: backgroundMove 100%, ease-in-out infinite; */

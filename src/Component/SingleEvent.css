@@ -1,6 +1,6 @@
 .singleEventCard {
-  align-items: center;
-  width:30%;
+  text-align: center;
+  width: 30%;
   min-width: 350px;
   font-size: 18px;
   padding: 0.25em;
@@ -32,11 +32,11 @@
 }
 
 .button {
-  margin-top : 15px;
+  margin-top: 15px;
   margin-bottom: 20px;
   font-weight: bold;
   padding: 15px 40px;
-  background-image: linear-gradient(to top right,#ff9966  ,#ff5e62);
+  background-image: linear-gradient(to top right, #ff9966, #ff5e62);
   border-radius: 20px;
 }
 .button:hover {
@@ -48,7 +48,7 @@
   width: 90%;
 }
 
-.textOrder{
+.textOrder {
   display: flex;
   flex-direction: column;
   align-items: center;

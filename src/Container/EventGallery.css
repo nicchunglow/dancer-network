@@ -19,6 +19,7 @@
   align-items: center;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
+  justify-content: center;
 }
 
 .search-box-container {
