@@ -58,7 +58,7 @@
 }
 
 .create-event-button {
- margin-left: 20px;
+  margin-left: 20px;
   font-weight: bold;
   padding: 10px 0px;
   min-width: 130px;
@@ -71,10 +71,10 @@
 }
 
 .brandLogo {
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
-.divAlign{
+.divAlign {
   display: flex;
   align-items: center;
 }
