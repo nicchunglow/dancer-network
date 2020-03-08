@@ -1,4 +1,4 @@
-.card {
+.fullDisplayCard {
   align-items: center;
   width: 60%;
   min-width: 400px;
@@ -10,12 +10,12 @@
   box-shadow: 2px 5px 10px rgba(116, 116, 116, 0.4);
 }
 
-.card:hover {
+.fullDisplayCard:hover {
   box-shadow: 2px 5px 10px rgb(104, 104, 104);
   transition: all 0.5s ease-in-out;
 }
 
-.card img {
+.fullDisplayCard img {
   display: inline-block;
   text-align: center;
   width: 50%;
@@ -24,22 +24,22 @@
   margin-top: 30px;
   margin-bottom: 0px;
 }
-.text-container {
+.fullDisplayTextContainer {
   text-align: center;
 }
 
-.button {
+.fullDisplayButton {
   margin-bottom: 20px;
   font-weight: bold;
   padding: 15px 70px;
   background-color: rgb(255, 133, 34);
   border-radius: 20px;
 }
-.button:hover {
+.fullDisplayButton:hover {
   box-shadow: 0px 5px 10px rgba(116, 116, 116, 0.4);
   transition: all 0.5s ease-in;
 }
-.description {
+.fullDisplayDescription {
   margin: auto;
   width: 90%;
 }

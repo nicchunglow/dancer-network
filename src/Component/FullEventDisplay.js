@@ -18,8 +18,8 @@ function SingleEvent({ perEvent }) {
     eventId
   } = perEvent;
   return (
-    <div className="card">
-      <div className="text-container">
+    <div className="fullDisplayCard">
+      <div className="fullDisplayTextContainer">
         <h2>{eventName}</h2>
         <h3>Location :{location}</h3>
         <h3>Start Date: {eventStartDate}</h3>
@@ -28,7 +28,7 @@ function SingleEvent({ perEvent }) {
         <h4>By: {eventOwner}</h4>
         <p>{eventSummary}</p>
         <NavLink to={"/events/:id"}>
-          <button className="button">Join now! </button>
+          <button className="fullDisplayButton">Join now! </button>
         </NavLink>
       </div>
     </div>

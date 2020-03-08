@@ -16,21 +16,24 @@ function SingleEvent({ perEvent }) {
     eventId
   } = perEvent;
   return (
-    <div className="card">
-      <div className="text-container">
+
+    <div className="singleEventCard">
+      <h2>{eventName}</h2>
+      <div className="singleEventTextContainer">
         <img
           alt="eventName"
           src={process.env.PUBLIC_URL + "/EventPicture.jpg"}
         />
-        <h2>{eventName}</h2>
-        <h3>Location :{location}</h3>
-        <h3>Start Date: {eventStartDate}</h3>
-        <h3>End Date: {eventEndDate}</h3>
-        <p>{eventSummary}</p>
-        <NavLink to={"/events/"}>
-          <button className="button">Find out more</button>
-        </NavLink>
+        <div className="textOrder">
+          <h3>Location :{location}</h3>
+          <p>Start Date: {eventStartDate}</p>
+          <p>End Date: {eventEndDate}</p>
+          <p>{eventSummary}</p>
+        </div>
       </div>
+      <NavLink to={"/events/"}>
+        <button className="button">Find out more</button>
+      </NavLink>
     </div>
   );
 }
