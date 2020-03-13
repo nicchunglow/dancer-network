@@ -44,9 +44,9 @@ class EventGallery extends React.Component {
         .toLowerCase()
         .startsWith(this.state.nameValue.toLowerCase())
     );
-    const filteredDate = this.state.allDanceEvents.filter(perEvent =>
-      perEvent.eventStartDate.startsWith(this.state.dateValue)
-    );
+    // const filteredDate = this.state.allDanceEvents.filter(perEvent =>
+    //   perEvent.eventStartDate.startsWith(this.state.dateValue)
+    // );
     const isNameValueNull = this.state.nameValue === "";
     const isDateValueNull = this.state.dateValue === "";
     return (
@@ -76,10 +76,10 @@ class EventGallery extends React.Component {
           </div>
           <div className="test">
             {!!this.state.isloading && <ReactLoading />}
-            {this.state.dateValue !== "" &&
+            {/* {this.state.dateValue !== "" &&
             filteredDate.map(oneEvent => {
               return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
-            })}
+            })} */}
             {this.state.nameValue !== "" &&
             filteredName.map(oneEvent => {
               return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;

@@ -110,7 +110,7 @@ class CreateEvent extends React.Component {
             placeholder="YYYY-MM-DD"
             onChange={this.onChangeEventStartDate}
           />
-          Event Start Date : <input
+          Event End Date : <input
             type="text"
             placeholder="YYYY-MM-DD"
             onChange={this.onChangeEventEndDate}
