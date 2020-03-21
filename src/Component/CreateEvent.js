@@ -1,7 +1,6 @@
 import React from "react";
 import "./CreateEvent.css";
-import axios from "axios";
-
+import axios from "../utils/axios";
 class CreateEvent extends React.Component {
   constructor(props) {
     super(props);
@@ -64,7 +63,7 @@ class CreateEvent extends React.Component {
       eventStartDate: this.state.eventStartDate,
       eventEndDate: this.state.eventEndDate,
     };
-    const res = await axios.post("https://dancer-network.herokuapp.com/events/create", details);
+    const res = await axios.post("/events/create", details);
     console.log(res);
   }
 

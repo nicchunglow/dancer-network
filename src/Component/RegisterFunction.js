@@ -1,6 +1,6 @@
 import React from "react";
 import "./CreateEvent.css";
-import axios from "axios";
+import axios from "../utils/axios";
 class RegisterFunction extends React.Component {
   constructor(props) {
     super(props);

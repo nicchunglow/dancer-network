@@ -1,7 +1,7 @@
 /* eslint-disable no-useless-constructor */
 import React, { Component } from "react";
 import "./MyMap.css";
-import DanceEventInfo from "../Resource/DanceEventInfo";
+import DanceEventInfo from "../utils/DanceEventInfo";
 import {
   GoogleMap,
   Marker,

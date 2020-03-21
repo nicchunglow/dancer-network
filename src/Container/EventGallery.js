@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import axios from "../utils/axios";
 import SingleEvent from "../Component/SingleEvent";
 import MyMap from "../Component/MyMap";
 import "../Container/EventGallery.css";
