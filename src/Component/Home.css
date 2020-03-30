@@ -6,10 +6,11 @@
   align-items: center;
 }
 .Home-border {
-  width: 40%;
+  width: 80%;
+  max-width: 1000px;
   margin: 50px;
   padding: 200px 10px;
-  background-color: ivory;
+  background-color: #f7f7f7;
   border: 1px solid rgb(65, 65, 65);
   border-radius: 10px;
 }
