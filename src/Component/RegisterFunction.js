@@ -73,7 +73,7 @@ class RegisterFunction extends React.Component {
           />
             Password:
           <input
-            type="text"
+            type="password"
             placeholder="password"
             onChange={this.onChangePassword}
           />

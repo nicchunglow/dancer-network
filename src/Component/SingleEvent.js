@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-undef */
 import React from "react";
 import "./SingleEvent.css";
 import { NavLink } from "react-router-dom";
@@ -12,11 +9,9 @@ function SingleEvent({ perEvent }) {
     eventEndDate,
     location,
     eventSummary,
-    // eslint-disable-next-line no-unused-vars
-    eventId
+    eventId,
   } = perEvent;
   return (
-
     <div className="singleEventCard">
       <h2>{eventName}</h2>
       <div className="singleEventTextContainer">
@@ -31,7 +26,7 @@ function SingleEvent({ perEvent }) {
           <p>{eventSummary}</p>
         </div>
       </div>
-      <NavLink to={"/events/"}>
+      <NavLink to={`/events/${eventId}`}>
         <button className="button">Find out more</button>
       </NavLink>
     </div>

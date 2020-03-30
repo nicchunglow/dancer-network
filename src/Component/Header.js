@@ -7,6 +7,7 @@ const Header = () => {
     <div className="divAlign">
       <ul><img alt="name" src="https://img.icons8.com/metro/26/000000/menu.png"/>
         <li>
+          <ul><Link to="/">Home</Link></ul>
           <ul><Link to="/users/login">Login?</Link></ul>
           <ul><Link to="/users/register">Join As User</Link></ul>
           <ul><Link to="/events/create">Create Event</Link></ul>

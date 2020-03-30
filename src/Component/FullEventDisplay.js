@@ -5,7 +5,7 @@ import React from "react";
 import "./FullEventDisplay.css";
 import { NavLink } from "react-router-dom";
 
-function SingleEvent({ perEvent }) {
+function singleEventFullDetails({ perEvent }) {
   const {
     eventName,
     eventStartDate,
@@ -34,4 +34,4 @@ function SingleEvent({ perEvent }) {
     </div>
   );
 }
-export default SingleEvent;
+export default singleEventFullDetails;

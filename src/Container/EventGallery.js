@@ -44,8 +44,8 @@ class EventGallery extends React.Component {
         .toLowerCase()
         .startsWith(this.state.nameValue.toLowerCase())
     );
-    // const filteredDate = this.state.allDanceEvents.filter(perEvent =>
-    //   perEvent.eventStartDate.startsWith(this.state.dateValue)
+    // const filteredDate = () => this.state.allDanceEvents.filter(perEvent =>
+    //   perEvent.eventStartDate.this.state.dateValue
     // );
     const isNameValueNull = this.state.nameValue === "";
     const isDateValueNull = this.state.dateValue === "";
@@ -58,14 +58,14 @@ class EventGallery extends React.Component {
             <input
               placeholder="Search by Name"
               className="searchbox"
-              type="text"
+              type={Text}
               value={this.state.nameValue}
               onChange={this.handleChange}
             />
             <input
               placeholder="Search by Date (e.g. DDMMYYYY)"
               className="searchbox"
-              type="text"
+              type={Text}
               value={this.state.dateValue}
               onChange={this.dateChange}
             />
@@ -74,21 +74,20 @@ class EventGallery extends React.Component {
             world!
             </h3>
           </div>
-          <div className="test">
+          <div className="all-events-gallery">
             {!!this.state.isloading && <ReactLoading />}
-            {/* {this.state.dateValue !== "" &&
-            filteredDate.map(oneEvent => {
-              return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
-            })} */}
             {this.state.nameValue !== "" &&
             filteredName.map(oneEvent => {
               return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
             })}
-            {isNameValueNull &&
-            isDateValueNull &&
-            filteredName.map(oneEvent => {
+            {/* {this.state.dateValue !== "" &&
+            filteredDate.map(oneEvent => {
               return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
-            })}
+            })} */}
+            {isNameValueNull && isDateValueNull &&
+        filteredName.map(oneEvent => {
+          return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
+        })}
           </div>
         </div>
       </div>

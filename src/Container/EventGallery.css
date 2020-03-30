@@ -15,10 +15,9 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  height: 1200px;
+  height: auto;
   align-items: center;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow: auto;
   justify-content: center;
 }
 
@@ -52,7 +51,7 @@
   box-shadow: 2px 5px 10px #e0e0e0;
 }
 
-.test{
+.all-events-gallery{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

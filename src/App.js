@@ -19,9 +19,9 @@ function App() {
         <Route exact path="/users/register" component={RegisterFunction} />
         <Route exact path="/events/create" component={CreateEvent} />
         <Route exact path="/events" component={EventGallery} />
-        <Route exact path="/events/id" component={EventDetailsPage} />
+        <Route exact path="/events/:id" component={EventDetailsPage} />
         <Route exact path="/users/login" component={Login} />
-        <Redirect to="/events"/>
+        <Redirect to="/"/>
       </div>
       <Footer />
     </BrowserRouter>
