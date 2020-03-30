@@ -51,7 +51,6 @@ class EventGallery extends React.Component {
     const isDateValueNull = this.state.dateValue === "";
     return (
       <div className="whole-gallery">
-        <MyMap />
         <div className="eventgallery">
           <div className="search-box-container">
             <h2>Find your events here!</h2>
@@ -74,6 +73,7 @@ class EventGallery extends React.Component {
             world!
             </h3>
           </div>
+          <MyMap />
           <div className="all-events-gallery">
             {!!this.state.isloading && <ReactLoading />}
             {this.state.nameValue !== "" &&

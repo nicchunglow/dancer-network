@@ -24,10 +24,11 @@
 .search-box-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 85%;
   max-width: 1000px;
   font-size: 12px;
-  padding: 1em;
+  padding: 20px;
   border-radius: 20px;
   background-color: #f7f7f7;
   box-shadow: 0px 5px 5px rgba(116, 116, 116, 0.4);
@@ -40,7 +41,7 @@
 
 .searchbox {
 
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   height: 30px;
   margin: 10px auto;
