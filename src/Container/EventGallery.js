@@ -52,6 +52,7 @@ class EventGallery extends React.Component {
     return (
       <div className="whole-gallery">
         <div className="eventgallery">
+          <MyMap />
           <div className="search-box-container">
             <h2>Find your events here!</h2>
             <input
@@ -73,7 +74,6 @@ class EventGallery extends React.Component {
             world!
             </h3>
           </div>
-          <MyMap />
           <div className="all-events-gallery">
             {!!this.state.isloading && <ReactLoading />}
             {this.state.nameValue !== "" &&
