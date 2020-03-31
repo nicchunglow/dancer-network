@@ -50,8 +50,8 @@ class MyMap extends Component {
 
       <div>
         <GoogleMap
-          defaultZoom={3}
-          defaultCenter={{ lat: 1.28, lng: 103.85 }} >
+          defaultZoom={10}
+          defaultCenter={{ lat: 1.35, lng: 103.85 }} >
           {DanceEventInfo.map((event) =>
             <NewMarker
               key={event.id}
