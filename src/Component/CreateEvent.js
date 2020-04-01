@@ -48,15 +48,17 @@ class CreateEvent extends React.Component {
   };
 
   handleChange = address => {
-    this.setState({ address });
+    this.setState({
+      address
+    });
   };
 
-  handleSelect = address => {
-    geocodeByAddress(address)
-      .then(results => getLatLng(results[0]))
-      .then(latLng => console.log("Success", latLng))
-      .catch(error => console.error("Error", error));
-  };
+  // handleSelect = address => {
+  //   geocodeByAddress(address)
+  //     .then(results => getLatLng(results[0]))
+  //     .then(latLng => console.log("Success", latLng))
+  //     .catch(error => console.error("Error", error));
+  // };
 
   onChangeEventStartDate = event => {
     this.setState({
@@ -111,6 +113,7 @@ class CreateEvent extends React.Component {
             <option>Japan</option>
           </select>
           <PlacesAutocomplete
+            value={this.state.address}
             onChange={this.handleChange}
             onSelect={this.handleSelect}
           >
@@ -124,29 +127,34 @@ class CreateEvent extends React.Component {
                 <input
                   {...getInputProps({ placeholder: "Type Event location" })}
                 />
+                {loading ? <div>...failed</div> : null}
                 {suggestions.map(suggestion => {
-                  const style = { backgroundColor: suggestion.active ? "#f7f7f7" : "#000000" };
-
-                  return <div key="" {...getSuggestionItemProps(suggestion, { style })}>
-                    {suggestions.description}</div>;
+                  const style = {
+                    backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                  };
+                  return (
+                    <div {...getSuggestionItemProps(suggestion, { style })}>
+                      {suggestion.description}
+                    </div>
+                  );
                 })}
               </div>
             )}
           </PlacesAutocomplete>
-          Event Summary :{" "}
+          Event Summary :
           <textarea
             className="textSpace"
             type="text"
             placeholder="Share your Event Details"
             onChange={this.onChangeEventSummary}
           />
-          Event Start Date :{" "}
+          Event Start Date :
           <input
             type="text"
             placeholder="YYYY-MM-DD"
             onChange={this.onChangeEventStartDate}
           />
-          Event End Date :{" "}
+          Event End Date :
           <input
             type="text"
             placeholder="YYYY-MM-DD"

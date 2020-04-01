@@ -3,9 +3,8 @@
 /* eslint-disable no-undef */
 import React from "react";
 import "./FullEventDisplay.css";
-import { NavLink } from "react-router-dom";
 
-function singleEventFullDetails({ perEvent }) {
+function SingleEventFullDetails(perEvent) {
   const {
     eventName,
     eventStartDate,
@@ -27,11 +26,8 @@ function singleEventFullDetails({ perEvent }) {
         <h3>danceStyle: {danceStyle}</h3>
         <h4>By: {eventOwner}</h4>
         <p>{eventSummary}</p>
-        <NavLink to={"/events/:id"}>
-          <button className="fullDisplayButton">Join now! </button>
-        </NavLink>
       </div>
     </div>
   );
 }
-export default singleEventFullDetails;
+export default SingleEventFullDetails;

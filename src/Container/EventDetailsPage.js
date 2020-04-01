@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
-import singleEventFullDetails from "../Component/FullEventDisplay";
+import SingleEventFullDetails from "../Component/FullEventDisplay";
 class EventDetailsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ class EventDetailsPage extends React.Component {
     return (
       <div>
         {!!this.state.isloading && <ReactLoading />}
-        <singleEventFullDetails key={this.state.fullEventData.id} perEvent={this.state.fullEventData} />
+        <SingleEventFullDetails key={this.state.fullEventData.id} perEvent={this.state.fullEventData} />
       </div>
     );
   }

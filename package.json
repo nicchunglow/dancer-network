@@ -9,6 +9,7 @@
     "@types/googlemaps": "^3.39.3",
     "@types/markerclustererplus": "^2.1.33",
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "google-map-react": "^1.1.7",
     "minimist": "^1.2.5",
     "react": "^16.13.1",
@@ -44,12 +45,6 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint": "^6.8.0"
   }
 }
