@@ -53,12 +53,14 @@ class CreateEvent extends React.Component {
     });
   };
 
-  // handleSelect = address => {
-  //   geocodeByAddress(address)
-  //     .then(results => getLatLng(results[0]))
-  //     .then(latLng => console.log("Success", latLng))
-  //     .catch(error => console.error("Error", error));
-  // };
+  handleSelect = async address => {
+    const results = await geocodeByAddress(address);
+    const latLng = await getLatLng(results[0]);
+    this.setState({
+      address
+    });
+    console.log(latLng);
+  };
 
   onChangeEventStartDate = event => {
     this.setState({
@@ -127,10 +129,10 @@ class CreateEvent extends React.Component {
                 <input
                   {...getInputProps({ placeholder: "Type Event location" })}
                 />
-                {loading ? <div>...failed</div> : null}
+                {loading ? <div>...loading</div> : null}
                 {suggestions.map(suggestion => {
                   const style = {
-                    backgroundColor: suggestion.active ? "#41b6e6" : "#fff"
+                    backgroundColor: suggestion.active ? "#EC9280" : "#fff"
                   };
                   return (
                     <div {...getSuggestionItemProps(suggestion, { style })}>
