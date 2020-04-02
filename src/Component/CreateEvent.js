@@ -9,18 +9,23 @@ class CreateEvent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allEvents: [
-        {
-          eventName: "",
-          eventSummary: "",
-          danceStyle: "",
-          location: "",
-          eventStartDate: "",
-          eventEndDate: "",
-          address: ""
-        }
-      ]
+      allEvents: {
+        eventName: "",
+        eventSummary: "",
+        danceStyle: "",
+        location: "",
+        eventStartDate: "",
+        eventEndDate: "",
+        address: "",
+        coordinates: { lat: null, lng: null }
+      }
     };
+  }
+
+  componentDidMount() {
+    axios.get(
+      `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_SECRET}&libraries=places`
+    );
   }
 
   onChangeEventName = event => {
@@ -126,6 +131,8 @@ class CreateEvent extends React.Component {
               loading
             }) => (
               <div>
+                <p>lat :{this.state.lat}</p>
+                <p>lng :{this.state.lng}</p>
                 <input
                   {...getInputProps({ placeholder: "Type Event location" })}
                 />
