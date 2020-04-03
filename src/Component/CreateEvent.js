@@ -72,7 +72,7 @@ class CreateEvent extends React.Component {
       eventSummary: this.state.eventSummary,
       eventStartDate: this.state.eventStartDate,
       eventEndDate: this.state.eventEndDate,
-      coordindates: this.state.coordinates
+      coordinates: this.state.coordinates
     };
     const res = await instance.post("/events/create", payload);
     console.log(res.data);
@@ -113,8 +113,8 @@ class CreateEvent extends React.Component {
               <div>
                 Location of event:
                 <div>
-                  {/* <p>lat :{this.state.coordinates.lat}</p>
-                <p>lng :{this.state.coordinates.lng}</p> */}
+                  <p>lat :{this.state.coordinates.lat}</p>
+                  <p>lng :{this.state.coordinates.lng}</p>
                   <input
                     className="inputSpace"
                     {...getInputProps({ placeholder: "Type Event location" })}
