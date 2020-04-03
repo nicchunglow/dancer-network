@@ -78,7 +78,7 @@ class EventGallery extends React.Component {
             {!!this.state.isloading && <ReactLoading />}
             {this.state.nameValue !== "" &&
             filteredName.map(oneEvent => {
-              return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
+              return <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />;
             })}
             {/* {this.state.dateValue !== "" &&
             filteredDate.map(oneEvent => {
@@ -86,7 +86,7 @@ class EventGallery extends React.Component {
             })} */}
             {isNameValueNull && isDateValueNull &&
         filteredName.map(oneEvent => {
-          return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
+          return <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />;
         })}
           </div>
         </div>
