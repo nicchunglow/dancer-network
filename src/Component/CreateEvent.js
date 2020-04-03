@@ -1,6 +1,6 @@
 import React from "react";
 import "./CreateEvent.css";
-import axios from "../utils/axios";
+import instance from "../utils/axios";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng
@@ -9,23 +9,14 @@ class CreateEvent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allEvents: {
-        eventName: "",
-        eventSummary: "",
-        danceStyle: "",
-        location: "",
-        eventStartDate: "",
-        eventEndDate: "",
-        address: "",
-        coordinates: { lat: null, lng: null }
-      }
+      eventName: "",
+      eventSummary: "",
+      danceStyle: "Hip Hop",
+      eventStartDate: "",
+      eventEndDate: "",
+      address: "",
+      coordinates: { lat: "", lng: "" }
     };
-  }
-
-  componentDidMount() {
-    axios.get(
-      `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_SECRET}&libraries=places`
-    );
   }
 
   onChangeEventName = event => {
@@ -40,21 +31,15 @@ class CreateEvent extends React.Component {
     });
   };
 
-  onChangeFirstName = event => {
+  onChangeDanceStyle = event => {
     this.setState({
       danceStyle: event.target.value
     });
   };
 
-  onChangeLocation = event => {
+  handleChange = event => {
     this.setState({
-      location: event.target.value
-    });
-  };
-
-  handleChange = address => {
-    this.setState({
-      address
+      address: event
     });
   };
 
@@ -62,9 +47,9 @@ class CreateEvent extends React.Component {
     const results = await geocodeByAddress(address);
     const latLng = await getLatLng(results[0]);
     this.setState({
-      address
+      address: address,
+      coordinates: latLng
     });
-    console.log(latLng);
   };
 
   onChangeEventStartDate = event => {
@@ -80,15 +65,16 @@ class CreateEvent extends React.Component {
   };
 
   eventDetails = async event => {
-    const details = {
+    const payload = {
       eventName: this.state.eventName,
       danceStyle: this.state.danceStyle,
-      location: this.state.location,
+      address: this.state.address,
       eventSummary: this.state.eventSummary,
       eventStartDate: this.state.eventStartDate,
-      eventEndDate: this.state.eventEndDate
+      eventEndDate: this.state.eventEndDate,
+      coordindates: this.state.coordinates
     };
-    const res = await axios.post("/events/create", details);
+    const res = await instance.post("/events/create", payload);
     console.log(res);
   };
 
@@ -111,13 +97,7 @@ class CreateEvent extends React.Component {
             <option>Waacking</option>
             <option>Krump</option>
             <option>Breaking</option>
-            <option>All-styles</option>
-          </select>
-          Event at which country:
-          <select onChange={this.onChangeLocation}>
-            <option>Singapore</option>
-            <option>Malaysia</option>
-            <option>Japan</option>
+            <option>All-Styles</option>
           </select>
           <PlacesAutocomplete
             value={this.state.address}
@@ -131,22 +111,26 @@ class CreateEvent extends React.Component {
               loading
             }) => (
               <div>
-                <p>lat :{this.state.lat}</p>
-                <p>lng :{this.state.lng}</p>
-                <input
-                  {...getInputProps({ placeholder: "Type Event location" })}
-                />
-                {loading ? <div>...loading</div> : null}
-                {suggestions.map(suggestion => {
-                  const style = {
-                    backgroundColor: suggestion.active ? "#EC9280" : "#fff"
-                  };
-                  return (
-                    <div {...getSuggestionItemProps(suggestion, { style })}>
-                      {suggestion.description}
-                    </div>
-                  );
-                })}
+                Location of event:
+                <div>
+                  {/* <p>lat :{this.state.coordinates.lat}</p>
+                <p>lng :{this.state.coordinates.lng}</p> */}
+                  <input
+                    className="inputSpace"
+                    {...getInputProps({ placeholder: "Type Event location" })}
+                  />
+                  {loading ? <div>...loading</div> : null}
+                  {suggestions.map(suggestion => {
+                    const style = {
+                      backgroundColor: suggestion.active ? "#EC9280" : "#fff"
+                    };
+                    return (
+                      <div {...getSuggestionItemProps(suggestion, { style })}>
+                        {suggestion.description}
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
           </PlacesAutocomplete>

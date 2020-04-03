@@ -33,3 +33,7 @@
   height: 300px;
   resize: none;
 }
+.inputSpace {
+  width: 100%;
+  resize: none;
+}
