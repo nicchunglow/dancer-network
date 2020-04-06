@@ -113,11 +113,9 @@ class CreateEvent extends React.Component {
               <div>
                 Location of event:
                 <div>
-                  <p>lat :{this.state.coordinates.lat}</p>
-                  <p>lng :{this.state.coordinates.lng}</p>
                   <input
                     className="inputSpace"
-                    {...getInputProps({ placeholder: "Type Event location" })}
+                    {...getInputProps({ placeholder: "Type Event address here" })}
                   />
                   {loading ? <div>...loading</div> : null}
                   {suggestions.map(suggestion => {

@@ -16,29 +16,28 @@ class NewMarker extends Component {
     this.state = {
       isInfoBoxOpen: false,
       myEvent: props.boo,
-      allDanceEvents: []
+      coordinates: props.coordinates,
     };
   }
 
   render() {
-    const event = this.state.allDanceEvents;
+    const event = this.state.myEvent;
     return (
       <Marker
-        key={event.eventName}
         className="marker"
-        position={{ lat: parseInt(event.lat), lng: parseInt(event.lng) }}
+        position={{ lat: event.coordinates.lat, lng: event.coordinates.lng }}
         onClick={() => this.setState({ isInfoBoxOpen: true })}
       >
         {this.state.isInfoBoxOpen && (
           <InfoWindow
             onCloseClick={() => this.setState({ isInfoBoxOpen: false })}
           >
-            <h4>
-              Event name : {event.eventName}
-              Dance Style : {event.danceStyle}
-              Date : {event.date}
-              Country : {event.country}
-            </h4>
+            <div className="marker-text">
+              <h4>Event Name : {event.eventName}</h4>
+              <h5>Event Date : {event.eventStartDate}</h5>
+              <p>Dance Style : {event.danceStyle}</p>
+              <p>Address : {event.address}</p>
+            </div>
           </InfoWindow>
         )}
       </Marker>
@@ -49,25 +48,24 @@ class MyMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allDanceEvents: []
+      allDanceEvents: [],
     };
   }
 
   componentDidMount() {
-    instance.get("https://dancer-network.herokuapp.com/events").then(res => {
+    instance.get("https://dancer-network.herokuapp.com/events").then((res) => {
       this.setState({
-        allDanceEvents: res.data
+        allDanceEvents: res.data,
       });
-      console.log(res);
     });
   }
   render() {
     return (
       <div>
-        <GoogleMap defaultZoom={10} defaultCenter={{ lat: 1.35, lng: 103.85 }}>
-          {this.state.allDanceEvents.map(event => (
+        <GoogleMap defaultZoom={11} defaultCenter={{ lat: 1.35, lng: 103.85 }}>
+          {this.state.allDanceEvents.map((event) => (
             <NewMarker
-              allDanceEvents={this.state.allDanceEvents}
+              coordinates={event.coordinates}
               key={event.eventName}
               boo={event}
             ></NewMarker>
@@ -79,7 +77,7 @@ class MyMap extends Component {
 }
 
 const MapWithScript = withScriptjs(
-  withGoogleMap(props => <MyMap {...props} />)
+  withGoogleMap((props) => <MyMap {...props} />)
 );
 
 const InitiasedMap = () => (

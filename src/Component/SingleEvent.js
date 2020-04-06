@@ -7,20 +7,16 @@ function SingleEvent({ perEvent }) {
     eventName,
     eventStartDate,
     eventEndDate,
-    location,
+    address,
     eventSummary,
-    eventId,
+    eventId
   } = perEvent;
   return (
     <div className="singleEventCard">
       <h2>{eventName}</h2>
       <div className="singleEventTextContainer">
-        <img
-          alt="eventName"
-          src={process.env.PUBLIC_URL + "/EventPicture.jpg"}
-        />
         <div className="textOrder">
-          <h3>Location :{location}</h3>
+          <h3>Address :{address}</h3>
           <p>Start Date: {eventStartDate}</p>
           <p>End Date: {eventEndDate}</p>
           <p>{eventSummary}</p>

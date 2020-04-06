@@ -15,7 +15,6 @@
   transition: all ease-in 0.2s;
 }
 
-h4 {
-  display: inline-block;
-  width: 60%;
+.marker-text {
+text-align: center;
 }
