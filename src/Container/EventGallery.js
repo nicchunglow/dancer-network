@@ -11,83 +11,124 @@ class EventGallery extends React.Component {
     this.state = {
       nameValue: "",
       dateValue: "",
+      danceStyleValue: "",
       allDanceEvents: [],
       showAllEvents: true,
-      isloading: true
+      isloading: true,
     };
   }
 
   componentDidMount() {
-    axios.get("https://dancer-network.herokuapp.com/events").then(res => {
+    axios.get("https://dancer-network.herokuapp.com/events").then((res) => {
       this.setState({
         allDanceEvents: res.data,
-        isloading: false
+        isloading: false,
       });
     });
   }
 
-  handleChange = event => {
+  onEventNameChange = (event) => {
     this.setState({
-      nameValue: event.target.value
+      nameValue: event.target.value,
     });
   };
 
-  dateChange = event => {
+  onDanceStyleChange = (event) => {
     this.setState({
-      dateValue: event.target.value
+      danceStyleValue: event.target.value,
+    });
+  };
+
+  dateChange = (event) => {
+    this.setState({
+      dateValue: event.target.value,
     });
   };
 
   render() {
-    const filteredName = this.state.allDanceEvents.filter(perEvent =>
+    const filteredName = this.state.allDanceEvents.filter((perEvent) =>
       perEvent.eventName
         .toLowerCase()
         .startsWith(this.state.nameValue.toLowerCase())
     );
-    // const filteredDate = () => this.state.allDanceEvents.filter(perEvent =>
-    //   perEvent.eventStartDate.this.state.dateValue
-    // );
+    const filteredDanceStyle = this.state.allDanceEvents.filter((perEvent) =>
+      perEvent.danceStyle
+        .toLowerCase()
+        .startsWith(this.state.danceStyleValue.toLowerCase())
+    );
+    const filteredDate = this.state.allDanceEvents.filter((perEvent) =>
+      perEvent.eventStartDate.startsWith(this.state.dateValue)
+    );
     const isNameValueNull = this.state.nameValue === "";
     const isDateValueNull = this.state.dateValue === "";
+    const isDanceStyleNull = this.state.danceStyleValue === "";
     return (
       <div className="whole-gallery">
         <div className="eventgallery">
-          <MyMap />
           <div className="search-box-container">
+            <h1>All Events</h1>
+            <MyMap />
             <h2>Find your events here!</h2>
             <input
               placeholder="Search by Name"
               className="searchbox"
-              type={Text}
+              type="text"
               value={this.state.nameValue}
-              onChange={this.handleChange}
+              onChange={this.onEventNameChange}
             />
             <input
-              placeholder="Search by Date (e.g. DDMMYYYY)"
+              placeholder="Search by Style"
               className="searchbox"
-              type={Text}
+              type="text"
+              value={this.state.danceStyleValue}
+              onChange={this.onDanceStyleChange}
+            />
+            <input
+              placeholder="Search by Date e.g (YYYY-MM-DD)"
+              className="searchbox"
+              type="text"
               value={this.state.dateValue}
               onChange={this.dateChange}
             />
             <h3>
-            Currently {this.state.allDanceEvents.length} events around the
-            world!
+              Currently {this.state.allDanceEvents.length} events around the
+              world!
             </h3>
           </div>
           <div className="all-events-gallery">
             {!!this.state.isloading && <ReactLoading />}
             {this.state.nameValue !== "" &&
-            filteredName.map(oneEvent => {
-              return <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />;
-            })}
-            {/* {this.state.dateValue !== "" &&
-            filteredDate.map(oneEvent => {
-              return <SingleEvent key={oneEvent.id} perEvent={oneEvent} />;
-            })} */}
-            {isNameValueNull && isDateValueNull &&
-        filteredName.map(oneEvent => {
-          return <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />;
-        })}
+              isDateValueNull &&
+              isDanceStyleNull &&
+              filteredName.map((oneEvent) => {
+                return (
+                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                );
+              })}
+            {this.state.dateValue !== "" &&
+              isNameValueNull &&
+              isDanceStyleNull &&
+              filteredDate.map((oneEvent) => {
+                return (
+                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                );
+              })}
+            {this.state.danceStyle !== "" &&
+              isNameValueNull &&
+              isDateValueNull &&
+              filteredDanceStyle.map((oneEvent) => {
+                return (
+                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                );
+              })}
+            {isNameValueNull &&
+              isDateValueNull &&
+              isDanceStyleNull &&
+              filteredName.map((oneEvent) => {
+                return (
+                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                );
+              })}
           </div>
         </div>
       </div>
