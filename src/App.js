@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/events" component={EventGallery} />
         <Route exact path="/events/:id" component={EventDetailsPage} />
         <Route exact path="/users/login" component={Login} />
-        <Redirect to="/events/create"/>
+        <Redirect to="/users/login" />
       </div>
       <Footer />
     </BrowserRouter>
