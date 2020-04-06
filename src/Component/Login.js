@@ -49,17 +49,20 @@ class Login extends React.Component {
           <h2>Login</h2>
           username:{" "}
           <input
+            aria-label="username"
             type="text"
             placeholder="username"
             onChange={this.onChangeUsername}
           />
           password:{" "}
           <input
+            aria-label="password"
             type="password"
             placeholder="password"
             onChange={this.onChangePassword}
           />
           <button
+            aria-label="loginButton"
             className="add-event"
             onClick={(event) => this.PostLogin(event)}
           >

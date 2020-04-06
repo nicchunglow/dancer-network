@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./MyMap.css";
-import DanceEventInfo from "../utils/DanceEventInfo";
 import {
   GoogleMap,
   Marker,
