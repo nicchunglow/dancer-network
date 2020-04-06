@@ -24,6 +24,7 @@ class EventGallery extends React.Component {
         allDanceEvents: res.data,
         isloading: false,
       });
+      console.log(this.state.allDanceEvents);
     });
   }
 
@@ -62,6 +63,7 @@ class EventGallery extends React.Component {
     const isNameValueNull = this.state.nameValue === "";
     const isDateValueNull = this.state.dateValue === "";
     const isDanceStyleNull = this.state.danceStyleValue === "";
+
     return (
       <div className="whole-gallery">
         <div className="eventgallery">
@@ -117,14 +119,6 @@ class EventGallery extends React.Component {
               isNameValueNull &&
               isDateValueNull &&
               filteredDanceStyle.map((oneEvent) => {
-                return (
-                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
-                );
-              })}
-            {isNameValueNull &&
-              isDateValueNull &&
-              isDanceStyleNull &&
-              filteredName.map((oneEvent) => {
                 return (
                   <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
                 );

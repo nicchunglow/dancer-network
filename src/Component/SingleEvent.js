@@ -17,6 +17,7 @@ function SingleEvent({ perEvent }) {
       <h2>{eventName}</h2>
       <div className="singleEventTextContainer">
         <div className="textOrder">
+          <p>{eventId}</p>
           <h4>Event Venue :{address}</h4>
           <h5>Dance Style: {danceStyle}</h5>
           <p>Event Date: {eventStartDate}</p>

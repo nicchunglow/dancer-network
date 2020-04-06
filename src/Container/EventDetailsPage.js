@@ -29,9 +29,6 @@ class EventDetailsPage extends React.Component {
   }
 
   render() {
-    // const eventId = props.match.params.id;
-    // allEvents = this.state.fullEventData;
-    // const currentEventData = allEvents.find((event) => event.id === eventId);
     return (
       <div>
         {!!this.state.isloading && <ReactLoading />}

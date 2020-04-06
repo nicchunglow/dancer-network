@@ -1,6 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-undef */
 import React from "react";
 import "./FullEventDisplay.css";
 
@@ -13,8 +10,7 @@ function SingleEventFullDetails(perEvent) {
     eventSummary,
     danceStyle,
     eventOwner,
-    // eslint-disable-next-line no-unused-vars
-    eventId
+    eventId,
   } = perEvent;
   return (
     <div className="fullDisplayCard">
