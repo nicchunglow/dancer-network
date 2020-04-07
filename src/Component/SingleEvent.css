@@ -1,9 +1,9 @@
 .singleEventCard {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 30%;
-  min-width: 350px;
-  font-size: 18px;
-  padding: 0.25em;
+  min-width: 325px;
   margin: 10px auto;
   border-radius: 10px;
   background-color: #f9f9f9;
@@ -18,16 +18,11 @@
 
 .singleEventCard img {
   display: inline-block;
-  width: 30%;
+  width: 40%;
   max-width: 200px;
   object-fit: scale-down;
   margin-top: 30px;
   margin-bottom: 0px;
-}
-.singleEventTextContainer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 }
 
 .button {
@@ -42,11 +37,6 @@
   box-shadow: 0px 5px 10px rgba(116, 116, 116, 0.4);
   transition: all 0.5s ease-in;
 }
-.description {
-  margin: auto;
-  width: 90%;
-}
-
 .textOrder {
   display: flex;
   flex-direction: column;

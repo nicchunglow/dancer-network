@@ -2,34 +2,39 @@ import React from "react";
 import "./SingleEvent.css";
 import { NavLink } from "react-router-dom";
 
-function SingleEvent({ perEvent }) {
-  const {
-    eventName,
-    eventStartDate,
-    eventEndDate,
-    address,
-    eventSummary,
-    eventId,
-    danceStyle,
-  } = perEvent;
-  return (
-    <div className="singleEventCard">
-      <h2>{eventName}</h2>
-      <div className="singleEventTextContainer">
-        <div className="textOrder">
-          <p>{eventId}</p>
-          <h4>Event Venue :{address}</h4>
-          <h5>Dance Style: {danceStyle}</h5>
-          <p>Event Date: {eventStartDate}</p>
-          <p>Event End Date: {eventEndDate}</p>
-          <p>{eventSummary}</p>
+class SingleEvent extends React.Component {
+  constructor(props) {
+    super(props.perEvent);
+    const perEvent = props.perEvent;
+    this.state = {
+      eventName: perEvent.eventName,
+      eventStartDate: perEvent.eventStartDate,
+      eventEndDate: perEvent.eventEndDate,
+      address: perEvent.address,
+      eventSummary: perEvent.eventSummary,
+      eventId: perEvent.eventId,
+      danceStyle: perEvent.danceStyle,
+    };
+  }
+  render() {
+    const eachEvent = this.state;
+    return (
+      <div className="singleEventCard">
+        <div className="singleEventTextContainer">
+          <div className="textOrder">
+            <h2>{eachEvent.eventName}</h2>
+            <h3>Event Location</h3>
+            <p>{eachEvent.address}</p>
+            <p>Dance Style: {eachEvent.danceStyle}</p>
+            <p>Event Date: {eachEvent.eventStartDate}</p>
+            <p>Event End Date: {eachEvent.eventEndDate}</p>
+            <NavLink to={`/events/${eachEvent.eventId}`}>
+              <button className="button">Find out more</button>
+            </NavLink>
+          </div>
         </div>
       </div>
-      <NavLink to={`/events/${eventId}`}>
-        <button className="button">Find out more</button>
-      </NavLink>
-      
-    </div>
-  );
+    );
+  }
 }
 export default SingleEvent;
