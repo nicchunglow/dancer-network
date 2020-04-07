@@ -60,7 +60,6 @@ class RegisterFunction extends React.Component {
       "https://dancer-network.herokuapp.com/users/register",
       details
     );
-    console.log(res);
   };
 
   render() {

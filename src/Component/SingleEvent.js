@@ -1,11 +1,11 @@
 import React from "react";
 import "./SingleEvent.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class SingleEvent extends React.Component {
   constructor(props) {
-    super(props.perEvent);
-    const perEvent = props.perEvent;
+    super(props);
+    const perEvent = this.props.perEvent;
     this.state = {
       eventName: perEvent.eventName,
       eventStartDate: perEvent.eventStartDate,
@@ -28,9 +28,9 @@ class SingleEvent extends React.Component {
             <p>Dance Style: {eachEvent.danceStyle}</p>
             <p>Event Date: {eachEvent.eventStartDate}</p>
             <p>Event End Date: {eachEvent.eventEndDate}</p>
-            <NavLink to={`/events/${eachEvent.eventId}`}>
+            <Link to={`/events/${eachEvent.eventId}`}>
               <button className="button">Find out more</button>
-            </NavLink>
+            </Link>
           </div>
         </div>
       </div>

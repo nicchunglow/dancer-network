@@ -39,7 +39,6 @@ class Login extends React.Component {
       payload
     );
 
-    console.log(res.data);
     this.onLoginSuccess();
   };
   render() {

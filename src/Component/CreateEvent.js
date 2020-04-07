@@ -75,7 +75,6 @@ class CreateEvent extends React.Component {
       coordinates: this.state.coordinates
     };
     const res = await instance.post("/events/create", payload);
-    console.log(res.data);
   };
 
   render() {
