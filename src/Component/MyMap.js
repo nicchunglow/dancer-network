@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import "./MyMap.css";
 import {
@@ -15,7 +14,7 @@ class NewMarker extends Component {
     super(props);
     this.state = {
       isInfoBoxOpen: false,
-      myEvent: props.boo,
+      myEvent: props.details,
       coordinates: props.coordinates,
     };
   }
@@ -67,7 +66,7 @@ class MyMap extends Component {
             <NewMarker
               coordinates={event.coordinates}
               key={event.eventName}
-              boo={event}
+              details={event}
             ></NewMarker>
           ))}
         </GoogleMap>

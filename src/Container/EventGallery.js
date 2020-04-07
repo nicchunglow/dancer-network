@@ -1,7 +1,7 @@
 
 import React from "react";
 import axios from "../utils/axios";
-import SingleEvent from "../Component/SingleEvent";
+import SingleEventCard from "../Component/SingleEventCard";
 import MyMap from "../Component/MyMap";
 import "../Container/EventGallery.css";
 import ReactLoading from "react-loading";
@@ -104,7 +104,7 @@ class EventGallery extends React.Component {
               isDanceStyleNull &&
               filteredName.map((oneEvent) => {
                 return (
-                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                  <SingleEventCard key={oneEvent.eventName} perEvent={oneEvent} />
                 );
               })}
             {this.state.dateValue !== "" &&
@@ -112,7 +112,7 @@ class EventGallery extends React.Component {
               isDanceStyleNull &&
               filteredDate.map((oneEvent) => {
                 return (
-                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                  <SingleEventCard key={oneEvent.eventName} perEvent={oneEvent} />
                 );
               })}
             {this.state.danceStyle !== "" &&
@@ -120,7 +120,7 @@ class EventGallery extends React.Component {
               isDateValueNull &&
               filteredDanceStyle.map((oneEvent) => {
                 return (
-                  <SingleEvent key={oneEvent.eventName} perEvent={oneEvent} />
+                  <SingleEventCard key={oneEvent.eventName} perEvent={oneEvent} />
                 );
               })}
           </div>

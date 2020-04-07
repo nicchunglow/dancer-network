@@ -1,9 +1,8 @@
-
 import React from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
-import "../Component/EventDetailsPage.css";
-class EventDetailsPage extends React.Component {
+import "../Component/FullEventDetailsPage.css";
+class FullEventDetailsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,4 +43,4 @@ class EventDetailsPage extends React.Component {
     );
   }
 }
-export default EventDetailsPage;
+export default FullEventDetailsPage;

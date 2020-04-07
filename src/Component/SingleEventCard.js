@@ -1,7 +1,7 @@
 import React from "react";
-import "./SingleEvent.css";
+import "./SingleEventCard.css";
 import { Link } from "react-router-dom";
-class SingleEvent extends React.Component {
+class SingleEventCard extends React.Component {
   constructor(props) {
     super(props);
     const perEvent = this.props.perEvent;
@@ -36,4 +36,4 @@ class SingleEvent extends React.Component {
     );
   }
 }
-export default SingleEvent;
+export default SingleEventCard;

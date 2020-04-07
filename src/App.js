@@ -5,7 +5,7 @@ import Footer from "./Component/Footer";
 import EventGallery from "../src/Container/EventGallery";
 import Home from "./Component/Home";
 import "./App.css";
-import EventDetailsPage from "../src/Component/EventDetailsPage";
+import FullEventDetailsPage from "./Component/FullEventDetailsPage";
 import CreateEvent from "../src/Component/CreateEvent";
 import RegisterFunction from "./Component/RegisterFunction";
 import Login from "./Component/Login";
@@ -19,7 +19,7 @@ function App() {
         <Route exact path="/users/register" component={RegisterFunction} />
         <Route exact path="/events/create" component={CreateEvent} />
         <Route exact path="/events" component={EventGallery} />
-        <Route exact path="/events/:id" component={EventDetailsPage} />
+        <Route exact path="/events/:id" component={FullEventDetailsPage} />
         <Route exact path="/users/login" component={Login} />
         <Redirect to="/events" />
       </div>
