@@ -81,7 +81,7 @@ const MapWithScript = withScriptjs(
 
 const InitiasedMap = () => (
   <MapWithScript
-    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_SECRET}`}
+    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_SECRET}&libraries=places`}
     loadingElement={<div style={{ height: "100%" }} />}
     containerElement={<div className="map" />}
     mapElement={<div style={{ height: "100%" }} />}
