@@ -1,7 +1,8 @@
+
 import React from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
-import { menu } from "semantic-ui-react";
+import "../Component/EventDetailsPage.css";
 class EventDetailsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -20,13 +21,7 @@ class EventDetailsPage extends React.Component {
           fullEventData: res.data,
           isloading: false,
         });
-      })
-      .catch(() =>
-        this.setState({
-          errorMessage: "GG liao",
-          isloading: false,
-        })
-      );
+      });
   }
 
   render() {
@@ -42,7 +37,7 @@ class EventDetailsPage extends React.Component {
             <p>End Date: {fullDetails.eventEndDate}</p>
             <p>danceStyle: {fullDetails.danceStyle}</p>
             <p>{fullDetails.eventSummary}</p>
-            <h4>By: {fullDetails.eventOwner}</h4>
+            <h4>Event By: {fullDetails.eventOwner}</h4>
           </div>
         </div>
       </div>

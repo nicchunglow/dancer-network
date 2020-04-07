@@ -1,7 +1,6 @@
 import React from "react";
 import "./SingleEvent.css";
 import { Link } from "react-router-dom";
-
 class SingleEvent extends React.Component {
   constructor(props) {
     super(props);
