@@ -28,6 +28,7 @@ function SingleEvent({ perEvent }) {
       <NavLink to={`/events/${eventId}`}>
         <button className="button">Find out more</button>
       </NavLink>
+      
     </div>
   );
 }

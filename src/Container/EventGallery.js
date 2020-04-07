@@ -24,7 +24,6 @@ class EventGallery extends React.Component {
         allDanceEvents: res.data,
         isloading: false,
       });
-      console.log(this.state.allDanceEvents);
     });
   }
 
