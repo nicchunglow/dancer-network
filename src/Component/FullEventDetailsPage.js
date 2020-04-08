@@ -14,7 +14,7 @@ class FullEventDetailsPage extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://dancer-network.herokuapp.com/events/${this.state.eventId}`)
+      .get(`https://dancer-network.herokuapp.com/events/published/${this.state.eventId}`)
       .then((res) => {
         this.setState({
           fullEventData: res.data,

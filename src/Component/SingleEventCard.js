@@ -27,7 +27,7 @@ class SingleEventCard extends React.Component {
             <p>Dance Style: {eachEvent.danceStyle}</p>
             <p>Event Date: {eachEvent.eventStartDate}</p>
             <p>Event End Date: {eachEvent.eventEndDate}</p>
-            <Link to={`/events/${eachEvent.eventId}`}>
+            <Link to={`/events/published/${eachEvent.eventId}`}>
               <button className="button">Find out more</button>
             </Link>
           </div>
