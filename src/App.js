@@ -7,7 +7,7 @@ import Home from "./Component/Home";
 import "./App.css";
 import FullEventDetailsPage from "./Component/FullEventDetailsPage";
 import CreateEvent from "../src/Component/CreateEvent";
-import RegisterFunction from "./Component/RegisterFunction";
+import RegisterUser from "./Component/RegisterUser";
 import Login from "./Component/Login";
 
 function App() {
@@ -16,12 +16,12 @@ function App() {
       <Header />
       <div className="App">
         <Route exact path="/" component={Home} />
-        <Route exact path="/users/register" component={RegisterFunction} />
+        <Route exact path="/users/register" component={RegisterUser} />
         <Route exact path="/events/create" component={CreateEvent} />
         <Route exact path="/events" component={EventGallery} />
         <Route exact path="/events/published/:id" component={FullEventDetailsPage} />
         <Route exact path="/users/login" component={Login} />
-        <Redirect to="/events" />
+        <Redirect to="/" />
       </div>
       <Footer />
     </BrowserRouter>

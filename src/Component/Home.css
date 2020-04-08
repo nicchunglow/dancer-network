@@ -5,9 +5,10 @@
   justify-content: center;
   align-items: center;
 }
+
 .Home-border {
-  width: 30%;
-  max-width: 1000px;
+  width: 80%;
+  max-width: 500px;
   margin: 50px;
   padding: 100px 10px;
   background-color: #f7f7f7;
