@@ -19,9 +19,12 @@ function App() {
         <Route exact path="/users/register" component={RegisterUser} />
         <Route exact path="/events/create" component={CreateEvent} />
         <Route exact path="/events" component={EventGallery} />
-        <Route exact path="/events/published/:id" component={FullEventDetailsPage} />
+        <Route
+          exact
+          path="/events/published/:id"
+          component={FullEventDetailsPage}
+        />
         <Route exact path="/users/login" component={Login} />
-        <Redirect to="/" />
       </div>
       <Footer />
     </BrowserRouter>
