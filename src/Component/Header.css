@@ -71,10 +71,11 @@
 }
 
 .brandLogo {
-  margin-right: 40px;
+  max-width: 100px;
 }
 
 .divAlign {
   display: flex;
   align-items: center;
 }
+

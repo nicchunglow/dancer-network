@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return <header className="Header">
     <div className="divAlign">
-      <ul><img alt="name" src="https://img.icons8.com/metro/26/000000/menu.png"/>
+      <ul><img alt="menu-image" src="https://img.icons8.com/metro/26/000000/menu.png"/>
         <li>
           <ul><Link to="/">Home</Link></ul>
           <ul><Link to="/users/login">Login?</Link></ul>
