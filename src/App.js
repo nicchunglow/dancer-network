@@ -25,6 +25,7 @@ function App() {
           component={FullEventDetailsPage}
         />
         <Route exact path="/users/login" component={Login} />
+        <Redirect to="/events" />
       </div>
       <Footer />
     </BrowserRouter>
