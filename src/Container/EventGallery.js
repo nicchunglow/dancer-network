@@ -1,4 +1,3 @@
-
 import React from "react";
 import axios from "../utils/axios";
 import SingleEventCard from "../Component/SingleEventCard";
@@ -98,13 +97,18 @@ class EventGallery extends React.Component {
             </h3>
           </div>
           <div className="all-events-gallery">
-            {!!this.state.isloading && <ReactLoading />}
+            {!!this.state.isloading && (
+              <ReactLoading type={"spinningBubbles"} color={"black"} />
+            )}
             {this.state.nameValue !== "" &&
               isDateValueNull &&
               isDanceStyleNull &&
               filteredName.map((oneEvent) => {
                 return (
-                  <SingleEventCard key={oneEvent.eventName} perEvent={oneEvent} />
+                  <SingleEventCard
+                    key={oneEvent.eventName}
+                    perEvent={oneEvent}
+                  />
                 );
               })}
             {this.state.dateValue !== "" &&
@@ -112,7 +116,10 @@ class EventGallery extends React.Component {
               isDanceStyleNull &&
               filteredDate.map((oneEvent) => {
                 return (
-                  <SingleEventCard key={oneEvent.eventName} perEvent={oneEvent} />
+                  <SingleEventCard
+                    key={oneEvent.eventName}
+                    perEvent={oneEvent}
+                  />
                 );
               })}
             {this.state.danceStyle !== "" &&
@@ -120,7 +127,10 @@ class EventGallery extends React.Component {
               isDateValueNull &&
               filteredDanceStyle.map((oneEvent) => {
                 return (
-                  <SingleEventCard key={oneEvent.eventName} perEvent={oneEvent} />
+                  <SingleEventCard
+                    key={oneEvent.eventName}
+                    perEvent={oneEvent}
+                  />
                 );
               })}
           </div>

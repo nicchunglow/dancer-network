@@ -14,7 +14,9 @@ class FullEventDetailsPage extends React.Component {
 
   componentDidMount() {
     axios
-      .get(`https://dancer-network.herokuapp.com/events/published/${this.state.eventId}`)
+      .get(
+        `https://dancer-network.herokuapp.com/events/published/${this.state.eventId}`
+      )
       .then((res) => {
         this.setState({
           fullEventData: res.data,
@@ -27,7 +29,9 @@ class FullEventDetailsPage extends React.Component {
     const fullDetails = this.state.fullEventData;
     return (
       <div>
-        {!!this.state.isloading && <ReactLoading />}
+        {!!this.state.isloading && (
+          <ReactLoading type={"spinningBubbles"} color={"black"} />
+        )}
         <div className="fullDisplayCard">
           <div className="fullDisplayTextContainer">
             <h2>{this.state.fullEventData.eventName}</h2>
