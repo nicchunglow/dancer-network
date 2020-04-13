@@ -1,5 +1,5 @@
 import React from "react";
-import "./CreateEvent.css";
+import "./RegisterUser.css";
 import axios from "../utils/axios";
 class RegisterUser extends React.Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class RegisterUser extends React.Component {
           firstName: "",
           lastName: "",
           stageName: "",
+          registerSuccess: false,
         },
       ],
     };
@@ -46,9 +47,13 @@ class RegisterUser extends React.Component {
       stageName: event.target.value,
     });
   };
-
+  onRegisterSuccess = () => {
+    this.setState({
+      registerSuccess: true,
+    });
+  };
   RegisterUser = async (event) => {
-    const details = {
+    const payload = {
       username: this.state.username,
       password: this.state.password,
       firstName: this.state.firstName,
@@ -58,14 +63,15 @@ class RegisterUser extends React.Component {
 
     const res = await axios.post(
       "https://dancer-network.herokuapp.com/users/register",
-      details
+      payload
     );
+    this.onRegisterSuccess();
   };
 
   render() {
     return (
-      <div className="create-event-card">
-        <div className="create-event">
+      <div className="register-user-card">
+        <div className="register-user">
           <h2>User Registration</h2>
           Username:
           <input
@@ -103,6 +109,9 @@ class RegisterUser extends React.Component {
           >
             Register
           </button>
+          {this.state.registerSuccess === true && (
+            <h5> Registration Successful! </h5>
+          )}
         </div>
       </div>
     );
