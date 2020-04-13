@@ -16,6 +16,7 @@ class CreateEvent extends React.Component {
       eventEndDate: "",
       address: "",
       coordinates: { lat: "", lng: "" },
+      eventImage: null,
     };
   }
 
@@ -64,6 +65,12 @@ class CreateEvent extends React.Component {
     });
   };
 
+  onChangeImage = (event) => {
+    this.setState({
+      eventImage: URL.createObjectURL(event.target.files[0]),
+    });
+  };
+
   eventDetails = async (event) => {
     const payload = {
       eventName: this.state.eventName,
@@ -88,6 +95,9 @@ class CreateEvent extends React.Component {
             placeholder="Event Name"
             onChange={this.onChangeEventName}
           />
+          Event poster:
+          <img src={this.state.eventImage} height="50%" width="100%" />
+          <input type="file" onChange={this.onChangeImage} />
           Dance Style:
           <select onChange={this.onChangeDanceStyle}>
             <option>Hip Hop</option>
