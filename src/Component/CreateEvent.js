@@ -95,9 +95,9 @@ class CreateEvent extends React.Component {
             placeholder="Event Name"
             onChange={this.onChangeEventName}
           />
-          Event poster:
+          {/* Event poster:
           <img src={this.state.eventImage} height="50%" width="100%" />
-          <input type="file" onChange={this.onChangeImage} />
+          <input type="file" onChange={this.onChangeImage} /> */}
           Dance Style:
           <select onChange={this.onChangeDanceStyle}>
             <option>Hip Hop</option>
