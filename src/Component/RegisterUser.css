@@ -1,7 +1,7 @@
 .register-user-card {
   display: inline-block;
   width: 70%;
-  max-width: 600px;
+  max-width: 400px;
   background-color: #f7f7f7;
   padding: 50px;
   border-radius: 20px;
@@ -13,7 +13,8 @@
 .register-user {
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  width: 100%;
+  text-align: center;
 }
 
 .add-user {
