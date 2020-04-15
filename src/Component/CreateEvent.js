@@ -17,6 +17,7 @@ class CreateEvent extends React.Component {
       address: "",
       coordinates: { lat: "", lng: "" },
       eventImage: null,
+      createEventSuccess: false,
     };
   }
 
@@ -71,6 +72,12 @@ class CreateEvent extends React.Component {
     });
   };
 
+  onCreateEventSuccess = () => {
+    this.setState({
+      createEventSuccess: true,
+    });
+  };
+
   eventDetails = async (event) => {
     const payload = {
       eventName: this.state.eventName,
@@ -82,6 +89,7 @@ class CreateEvent extends React.Component {
       coordinates: this.state.coordinates,
     };
     const res = await instance.post("/events/create", payload);
+    this.onCreateEventSuccess();
   };
 
   render() {
@@ -168,6 +176,9 @@ class CreateEvent extends React.Component {
           >
             Create your event!
           </button>
+          {this.state.createEventSuccess === true && (
+            <h5> Event Successfully created! </h5>
+          )}
         </div>
       </div>
     );
