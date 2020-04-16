@@ -39,13 +39,13 @@ class CreateEvent extends React.Component {
     });
   };
 
-  handleChange = (event) => {
+  onChangeMapAddressInput = (event) => {
     this.setState({
       address: event,
     });
   };
 
-  handleSelect = async (address) => {
+  onSelectMapAddress = async (address) => {
     const results = await geocodeByAddress(address);
     const latLng = await getLatLng(results[0]);
     this.setState({
@@ -118,8 +118,8 @@ class CreateEvent extends React.Component {
           </select>
           <PlacesAutocomplete
             value={this.state.address}
-            onChange={this.handleChange}
-            onSelect={this.handleSelect}
+            onChange={this.onChangeMapAddressInput}
+            onSelect={this.onSelectMapAddress}
           >
             {({
               getInputProps,
