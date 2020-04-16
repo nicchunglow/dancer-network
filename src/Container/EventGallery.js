@@ -39,7 +39,7 @@ class EventGallery extends React.Component {
     });
   };
 
-  dateChange = (event) => {
+  onDateChange = (event) => {
     this.setState({
       dateValue: event.target.value,
     });
@@ -89,7 +89,7 @@ class EventGallery extends React.Component {
               className="searchbox"
               type="text"
               value={this.state.dateValue}
-              onChange={this.dateChange}
+              onChange={this.onDateChange}
             />
             <h3>
               Currently {this.state.allDanceEvents.length} events around the
