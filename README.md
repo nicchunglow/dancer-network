@@ -44,7 +44,7 @@ Link to backend: https://github.com/nicchunglow/dancer-network-backend
 
 
 
-Working live demo can be accessed at https://dancer-network.netlify.com
+Working live demo can be accessed at https://dancer-network.netlify.app
 
 
 
@@ -52,7 +52,7 @@ Working live demo can be accessed at https://dancer-network.netlify.com
 
 
 
-<img src="https://media.giphy.com/media/VcBfQ3KWkfPYJcppxq/giphy.gif"></img>
+![alt-text](https://media.giphy.com/media/VcBfQ3KWkfPYJcppxq/giphy.gif)
 
 
 
@@ -60,7 +60,7 @@ Working live demo can be accessed at https://dancer-network.netlify.com
 
 
 
-<img src="https://media.giphy.com/media/kE3lW4IR0K3scWfkIv/giphy.gif"></img>
+![alt-text](https://media.giphy.com/media/kE3lW4IR0K3scWfkIv/giphy.gif)
 
 
 
