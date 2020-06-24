@@ -41,6 +41,7 @@ class Login extends React.Component {
 
     this.onLoginSuccess();
   };
+  
   render() {
     return (
       <div className="login-card">

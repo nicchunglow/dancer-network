@@ -7,7 +7,7 @@ import {
   withGoogleMap,
   withScriptjs,
 } from "react-google-maps";
-import instance from "../utils/axios";
+import Axios from "../utils/axios";
 
 class NewMarker extends Component {
   constructor(props) {
@@ -52,7 +52,7 @@ class MyMap extends Component {
   }
 
   componentDidMount() {
-    instance.get("https://dancer-network.herokuapp.com/events").then((res) => {
+    Axios.get("https://dancer-network.herokuapp.com/events").then((res) => {
       this.setState({
         allDanceEvents: res.data,
       });
