@@ -31,13 +31,12 @@
   box-shadow: 0px 5px 5px rgba(116, 116, 116, 0.4);
 }
 
-.search-box-container:hover{
+.search-box-container:hover {
   box-shadow: 2px 5px 10px rgb(104, 104, 104);
   transition: all 0.5s ease-in-out;
 }
 
 .searchbox {
-
   width: 90%;
   max-width: 600px;
   height: 30px;
@@ -49,8 +48,8 @@
   box-shadow: 2px 5px 10px #e0e0e0;
 }
 
-.all-events-gallery{
+.all-events-gallery {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
