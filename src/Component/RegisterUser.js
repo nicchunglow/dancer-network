@@ -53,19 +53,24 @@ class RegisterUser extends React.Component {
     });
   };
   RegisterUser = async (event) => {
-    const payload = {
-      username: this.state.username,
-      password: this.state.password,
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      stageName: this.state.stageName,
-    };
-
-    await axios.post(
-      "https://dancer-network.herokuapp.com/users/register",
-      payload
-    );
-    this.onRegisterSuccess();
+    try {
+      const payload = {
+        username: this.state.username,
+        password: this.state.password,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        stageName: this.state.stageName,
+      };
+      await axios.post(
+        "https://dancer-network.herokuapp.com/users/register",
+        payload
+      );
+      this.onRegisterSuccess();
+    } catch (error) {
+      if (error.response.status === 400) {
+        alert("Missing information. Please fill in all necessary details.");
+      }
+    }
   };
 
   render() {
