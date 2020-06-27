@@ -51,17 +51,29 @@ class EventGallery extends React.Component {
         .toLowerCase()
         .startsWith(this.state.nameValue.toLowerCase())
     );
+
     const filteredDanceStyle = this.state.allDanceEvents.filter((perEvent) =>
       perEvent.danceStyle
         .toLowerCase()
         .startsWith(this.state.danceStyleValue.toLowerCase())
     );
+
     const filteredDate = this.state.allDanceEvents.filter((perEvent) =>
       perEvent.eventStartDate.startsWith(this.state.dateValue)
     );
+
     const isNameValueNull = this.state.nameValue === "";
     const isDateValueNull = this.state.dateValue === "";
     const isDanceStyleNull = this.state.danceStyleValue === "";
+
+    const searchByName =
+      this.state.nameValue !== "" && isDateValueNull && isDanceStyleNull;
+
+    const searchByDate =
+      this.state.dateValue !== "" && isNameValueNull && isDanceStyleNull;
+
+    const searchByDanceStyle =
+      this.state.danceStyle !== "" && isNameValueNull && isDateValueNull;
 
     return (
       <div className="whole-gallery">
@@ -100,9 +112,7 @@ class EventGallery extends React.Component {
             {!!this.state.isloading && (
               <ReactLoading type={"spinningBubbles"} color={"black"} />
             )}
-            {this.state.nameValue !== "" &&
-              isDateValueNull &&
-              isDanceStyleNull &&
+            {searchByName &&
               filteredName.map((oneEvent) => {
                 return (
                   <SingleEventCard
@@ -111,9 +121,7 @@ class EventGallery extends React.Component {
                   />
                 );
               })}
-            {this.state.dateValue !== "" &&
-              isNameValueNull &&
-              isDanceStyleNull &&
+            {searchByDate &&
               filteredDate.map((oneEvent) => {
                 return (
                   <SingleEventCard
@@ -122,9 +130,7 @@ class EventGallery extends React.Component {
                   />
                 );
               })}
-            {this.state.danceStyle !== "" &&
-              isNameValueNull &&
-              isDateValueNull &&
+            {searchByDanceStyle &&
               filteredDanceStyle.map((oneEvent) => {
                 return (
                   <SingleEventCard
