@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="Home-border">
       <div className="Home-align">
-        <img src={process.env.PUBLIC_URL + "/dancer-network.png"} />
+        <img alt="logo" src={process.env.PUBLIC_URL + "/dancer-network.png"} />
         <p>
           This web-app aims to bring the dance community together by connecting
           daners to various dance events! As this app progress, it hopes to

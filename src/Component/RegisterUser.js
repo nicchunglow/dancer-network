@@ -61,7 +61,7 @@ class RegisterUser extends React.Component {
       stageName: this.state.stageName,
     };
 
-    const res = await axios.post(
+    await axios.post(
       "https://dancer-network.herokuapp.com/users/register",
       payload
     );

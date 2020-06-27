@@ -88,7 +88,7 @@ class CreateEvent extends React.Component {
       eventEndDate: this.state.eventEndDate,
       coordinates: this.state.coordinates,
     };
-    const res = await instance.post("/events/create", payload);
+    await instance.post("/events/create", payload);
     this.onCreateEventSuccess();
   };
 

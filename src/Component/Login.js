@@ -34,14 +34,14 @@ class Login extends React.Component {
       username: this.state.username,
       password: this.state.password,
     };
-    const res = await axios.post(
+    await axios.post(
       "https://dancer-network.herokuapp.com/users/login",
       payload
     );
 
     this.onLoginSuccess();
   };
-  
+
   render() {
     return (
       <div className="login-card">
