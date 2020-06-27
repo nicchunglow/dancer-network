@@ -30,16 +30,22 @@ class Login extends React.Component {
   };
 
   PostLogin = async (event) => {
-    const payload = {
-      username: this.state.username,
-      password: this.state.password,
-    };
-    await axios.post(
-      "https://dancer-network.herokuapp.com/users/login",
-      payload
-    );
+    try {
+      const payload = {
+        username: this.state.username,
+        password: this.state.password,
+      };
+      await axios.post(
+        "https://dancer-network.herokuapp.com/users/login",
+        payload
+      );
 
-    this.onLoginSuccess();
+      this.onLoginSuccess();
+    } catch (error) {
+      if (error.response.status === 400) {
+        alert("Login Failed. Please try again.");
+      }
+    }
   };
 
   render() {
