@@ -47,11 +47,13 @@ class RegisterUser extends React.Component {
       stageName: event.target.value,
     });
   };
+  
   onRegisterSuccess = () => {
     this.setState({
       registerSuccess: true,
     });
   };
+
   RegisterUser = async (event) => {
     try {
       const payload = {

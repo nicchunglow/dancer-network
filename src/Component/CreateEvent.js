@@ -1,6 +1,7 @@
 import React from "react";
 import "./CreateEvent.css";
 import instance from "../utils/axios";
+import { Link } from "react-router-dom";
 import PlacesAutocomplete, {
   geocodeByAddress,
   getLatLng,
@@ -16,8 +17,8 @@ class CreateEvent extends React.Component {
       eventEndDate: "",
       address: "",
       coordinates: { lat: "", lng: "" },
-      eventImage: null,
       createEventSuccess: false,
+      notLoggedIn: false,
     };
   }
 
@@ -78,18 +79,30 @@ class CreateEvent extends React.Component {
     });
   };
 
+  onNotLoggedIn = () => {
+    this.setState({
+      notLoggedIn: true,
+    });
+  };
+
   eventDetails = async (event) => {
-    const payload = {
-      eventName: this.state.eventName,
-      danceStyle: this.state.danceStyle,
-      address: this.state.address,
-      eventSummary: this.state.eventSummary,
-      eventStartDate: this.state.eventStartDate,
-      eventEndDate: this.state.eventEndDate,
-      coordinates: this.state.coordinates,
-    };
-    await instance.post("/events/create", payload);
-    this.onCreateEventSuccess();
+    try {
+      const payload = {
+        eventName: this.state.eventName,
+        danceStyle: this.state.danceStyle,
+        address: this.state.address,
+        eventSummary: this.state.eventSummary,
+        eventStartDate: this.state.eventStartDate,
+        eventEndDate: this.state.eventEndDate,
+        coordinates: this.state.coordinates,
+      };
+      await instance.post("/events/create", payload);
+      this.onCreateEventSuccess();
+    } catch (error) {
+      if (error.response.status === 401) {
+        this.onNotLoggedIn();
+      }
+    }
   };
 
   render() {
@@ -103,9 +116,6 @@ class CreateEvent extends React.Component {
             placeholder="Event Name"
             onChange={this.onChangeEventName}
           />
-          {/* Event poster:
-          <img src={this.state.eventImage} height="50%" width="100%" />
-          <input type="file" onChange={this.onChangeImage} /> */}
           Dance Style:
           <select onChange={this.onChangeDanceStyle}>
             <option>Hip Hop</option>
@@ -170,12 +180,21 @@ class CreateEvent extends React.Component {
             placeholder="YYYY-MM-DD"
             onChange={this.onChangeEventEndDate}
           />
-          <button
-            className="add-event"
-            onClick={(event) => this.eventDetails(event)}
-          >
-            Create your event!
-          </button>
+          {this.state.notLoggedIn === true ? (
+            <span>
+              <h5>Seems like you have not logged in!</h5>
+              <Link to="/users/login">
+                <button className="add-event">Login now!</button>
+              </Link>
+            </span>
+          ) : (
+            <button
+              className="add-event"
+              onClick={(event) => this.eventDetails(event)}
+            >
+              Create your event!
+            </button>
+          )}
           {this.state.createEventSuccess === true && (
             <h5> Event Successfully created! </h5>
           )}
