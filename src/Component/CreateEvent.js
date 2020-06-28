@@ -101,6 +101,8 @@ class CreateEvent extends React.Component {
     } catch (error) {
       if (error.response.status === 401) {
         this.onNotLoggedIn();
+      } else if ( error.response.status === 400){
+        alert("Missing information. Fill all necessary details.")
       }
     }
   };
