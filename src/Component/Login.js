@@ -53,14 +53,14 @@ class Login extends React.Component {
       <div className="login-card">
         <div className="login-text">
           <h2>Login</h2>
-          username:{" "}
+          username:
           <input
             aria-label="username"
             type="text"
             placeholder="username"
             onChange={this.onChangeUsername}
           />
-          password:{" "}
+          password:
           <input
             aria-label="password"
             type="password"

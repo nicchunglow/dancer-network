@@ -34,8 +34,8 @@ class FullEventDetailsPage extends React.Component {
         )}
         <div className="fullDisplayCard">
           <div className="fullDisplayTextContainer">
-            <h2>{this.state.fullEventData.eventName}</h2>
-            <p>Location :{fullDetails.location}</p>
+            <h2>{fullDetails.eventName}</h2>
+            <p>Location :{fullDetails.address}</p>
             <p>Start Date: {fullDetails.eventStartDate}</p>
             <p>End Date: {fullDetails.eventEndDate}</p>
             <p>danceStyle: {fullDetails.danceStyle}</p>
