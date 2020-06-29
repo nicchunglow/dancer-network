@@ -13,20 +13,22 @@ import Login from "./Component/Login";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <div className="App">
-        <Route exact path="/" component={Home} />
-        <Route exact path="/users/register" component={RegisterUser} />
-        <Route exact path="/events/create" component={CreateEvent} />
-        <Route exact path="/events" component={EventGallery} />
-        <Route
-          exact
-          path="/events/published/:id"
-          component={FullEventDetailsPage}
-        />
-        <Route exact path="/users/login" component={Login} />
+      <div>
+        <Header aria-label="HeaderBar" />
+        <div className="App">
+          <Route exact path="/" component={Home} />
+          <Route exact path="/users/register" component={RegisterUser} />
+          <Route exact path="/events/create" component={CreateEvent} />
+          <Route exact path="/events" component={EventGallery} />
+          <Route
+            exact
+            path="/events/published/:id"
+            component={FullEventDetailsPage}
+          />
+          <Route exact path="/users/login" component={Login} />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </BrowserRouter>
   );
 }
