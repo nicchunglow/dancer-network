@@ -10,25 +10,23 @@ import CreateEvent from "../src/Component/CreateEvent";
 import RegisterUser from "./Component/RegisterUser";
 import Login from "./Component/Login";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
-      <div>
-        <Header aria-label="HeaderBar" />
-        <div className="App">
-          <Route exact path="/" component={Home} />
-          <Route exact path="/users/register" component={RegisterUser} />
-          <Route exact path="/events/create" component={CreateEvent} />
-          <Route exact path="/events" component={EventGallery} />
-          <Route
-            exact
-            path="/events/published/:id"
-            component={FullEventDetailsPage}
-          />
-          <Route exact path="/users/login" component={Login} />
-        </div>
-        <Footer />
+      <Header aria-label="HeaderBar" />
+      <div className="App">
+        <Route exact path="/" component={Home} />
+        <Route exact path="/users/register" component={RegisterUser} />
+        <Route exact path="/events/create" component={CreateEvent} />
+        <Route exact path="/events" component={EventGallery} />
+        <Route
+          exact
+          path="/events/published/:id"
+          component={FullEventDetailsPage}
+        />
+        <Route exact path="/users/login" component={Login} />
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
