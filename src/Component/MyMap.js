@@ -5,9 +5,9 @@ import {
   Marker,
   InfoWindow,
   withGoogleMap,
+  withScriptjs,
 } from "react-google-maps";
 import Axios from "../utils/axios";
-
 class NewMarker extends Component {
   constructor(props) {
     super(props);
@@ -74,10 +74,13 @@ class MyMap extends Component {
   }
 }
 
-const MapWithScript = withGoogleMap((props) => <MyMap {...props} />);
+const MapWithScript = withScriptjs(
+  withGoogleMap((props) => <MyMap {...props} />)
+);
 
 const InitiasedMap = () => (
   <MapWithScript
+    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_SECRET}&libraries=places`}
     loadingElement={<div style={{ height: "100%" }} />}
     containerElement={<div className="map" />}
     mapElement={<div style={{ height: "100%" }} />}
