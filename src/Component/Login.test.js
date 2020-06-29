@@ -6,6 +6,11 @@ import MockAdapter from "axios-mock-adapter";
 const mockAxios = new MockAdapter(axios);
 
 describe("Login.js", () => {
+  test("Login title text should appear when page renders", () => {
+    const { getByLabelText } = render(<Login />);
+    const loginTitle = getByLabelText("Title");
+    expect(loginTitle).toBeInTheDocument();
+  });
   test("<h5> 'Login Successful!' should appear when login is successful.", async () => {
     mockAxios
       .onPost("https://dancer-network.herokuapp.com/users/login", {

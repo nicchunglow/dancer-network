@@ -52,7 +52,7 @@ class Login extends React.Component {
     return (
       <div className="login-card">
         <div className="login-text">
-          <h2>Login</h2>
+          <h2 aria-label="Title">Login</h2>
           username:
           <input
             aria-label="username"
