@@ -6,6 +6,11 @@ import MockAdapter from "axios-mock-adapter";
 const mockAxios = new MockAdapter(axios);
 
 describe("RegisterUser.js", () => {
+  test("User Registration text should appear when page renders", () => {
+    const { getByText } = render(<RegisterUser />);
+    const registerUserTitle = getByText("User Registration");
+    expect(registerUserTitle).toBeInTheDocument();
+  });
   test("<h5> 'Registration Successful!' should appear when Registration is successful.", async () => {
     mockAxios
       .onPost("https://dancer-network.herokuapp.com/users/register", {
