@@ -4,6 +4,7 @@ import SingleEventCard from "../Component/SingleEventCard";
 import MyMap from "../Component/MyMap";
 import "../Container/EventGallery.css";
 import ReactLoading from "react-loading";
+
 class EventGallery extends React.Component {
   constructor(props) {
     super(props);
