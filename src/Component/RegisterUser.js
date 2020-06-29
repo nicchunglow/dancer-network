@@ -47,7 +47,7 @@ class RegisterUser extends React.Component {
       stageName: event.target.value,
     });
   };
-  
+
   onRegisterSuccess = () => {
     this.setState({
       registerSuccess: true,
@@ -82,42 +82,48 @@ class RegisterUser extends React.Component {
           <h2>User Registration</h2>
           Username:
           <input
+            aria-label="username"
             type="text"
             placeholder="username"
             onChange={this.onChangeUsername}
           />
           Password:
           <input
+            aria-label="password"
             type="password"
             placeholder="password"
             onChange={this.onChangePassword}
           />
           First name:
           <input
+            aria-label="firstName"
             type="text"
-            placeholder="first name"
+            placeholder="First name"
             onChange={this.onChangeFirstName}
           />
           Last name:
           <input
+            aria-label="lastName"
             type="text"
-            placeholder="last name"
+            placeholder="Last name"
             onChange={this.onChangeLastName}
           />
           Stage Name:
           <input
+            aria-label="stageName"
             type="text"
-            placeholder="Stage Name"
+            placeholder="Stage name"
             onChange={this.onChangeStageName}
           />
           <button
+            aria-label="registerButton"
             className="add-event"
             onClick={(event) => this.RegisterUser(event)}
           >
             Register
           </button>
           {this.state.registerSuccess === true && (
-            <h5> Registration Successful! </h5>
+            <h5 aria-label="successText"> Registration Successful! </h5>
           )}
         </div>
       </div>

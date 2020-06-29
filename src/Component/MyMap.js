@@ -30,7 +30,7 @@ class NewMarker extends Component {
           <InfoWindow
             onCloseClick={() => this.setState({ isInfoBoxOpen: false })}
           >
-            <div className="marker-text">
+            <div alt="marker" className="marker-text">
               <h4>Event Name : {event.eventName}</h4>
               <h5>Event Date : {event.eventStartDate}</h5>
               <p>Dance Style : {event.danceStyle}</p>
