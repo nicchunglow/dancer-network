@@ -6,6 +6,9 @@ import MockAdapter from "axios-mock-adapter";
 const mockAxios = new MockAdapter(axios);
 
 describe("RegisterUser.js", () => {
+  afterEach(async () => {
+    jest.resetAllMocks();
+  });
   test("User Registration text should appear when page renders", () => {
     const { getByText } = render(<RegisterUser />);
     const registerUserTitle = getByText("User Registration");

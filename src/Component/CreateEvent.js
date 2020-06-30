@@ -111,7 +111,7 @@ class CreateEvent extends React.Component {
     return (
       <div className="create-event-card">
         <div className="create-event">
-          <h2>Create Event</h2>
+          <h2 aria-label="title">Create Event</h2>
           Event Name :
           <input
             type="text"

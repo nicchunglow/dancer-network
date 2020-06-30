@@ -6,6 +6,9 @@ import MockAdapter from "axios-mock-adapter";
 const mockAxios = new MockAdapter(axios);
 
 describe("Login.js", () => {
+  afterEach(async () => {
+    jest.resetAllMocks();
+  });
   test("Login title text should appear when page renders", () => {
     const { getByLabelText } = render(<Login />);
     const loginTitle = getByLabelText("Title");
