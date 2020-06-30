@@ -30,7 +30,12 @@ const Header = () => {
           </li>
         </ul>
         <Link to="/events/create">
-          <button className="create-event-button">Create Event</button>
+          <button
+            className="create-event-button"
+            aria-label="create-event-button"
+          >
+            Create Event
+          </button>
         </Link>
       </div>
       <img
